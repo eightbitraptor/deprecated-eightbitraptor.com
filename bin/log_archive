@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require '../lib/log_importer'
+require '../lib/data_store'
+
+# puts "Importing December..."
+# (20091200..20091231).each { |x|
+#   LogImporter.import("/var/log/reevoo.com/merged/merged.access.#{x.to_s}.log.gz")
+# }
+
+puts "Importing January..."
+(20100100..20100128).each { |x|
+  LogImporter.import("/var/log/reevoo.com/merged/merged.access.#{x.to_s}.log.gz")
+}
