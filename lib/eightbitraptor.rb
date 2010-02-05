@@ -11,6 +11,10 @@ class EightBitRaptor < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  get '/admin' do
+    redirect 'http://moe.enixns.com:2083', 301
+  end
   
   get '/writing' do
     'some list of categories or posts or something'
