@@ -42,6 +42,8 @@ h1,h2,h3 {
   background-color:#fff;
   border:1px solid #000;
   -webkit-box-shadow: 0px 0px 50px #222;
+  -moz-box-shadow: 0px 0px 50px #222;
+
 }
 
 #content p {
@@ -52,7 +54,7 @@ h1,h2,h3 {
 #content a{
   background-color: #cdcdcd;
   color:#000;
-  -webkit-transition: all 0.5s linear;
+  -webkit-transition: color,background-color 0.5s linear;
 }
 
 #content a:hover {
@@ -61,7 +63,8 @@ h1,h2,h3 {
 }
 
 .footer{
-  background-color:#668877;
+  background: -webkit-gradient(linear, left top, left bottom, from(#668877), to(#000));
+  background-image: -moz-linear-gradient(#668877, #000);
   color:#cdcdcd;
   font: 40% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif; 
   min-height:35px;
