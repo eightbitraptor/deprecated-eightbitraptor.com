@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require '../lib/log_importer'
-require '../lib/data_store'
-
-LogImporter.import("/var/log/reevoo.com/merged/#{LogImporter.yesterdays_log}")
