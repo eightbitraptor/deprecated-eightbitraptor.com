@@ -17,15 +17,7 @@ class EightBitRaptor < Sinatra::Base
   end
   
   get '/writing' do
-    'some list of categories or posts or something'
-  end
-  
-  get '/writing/:id' do
-    if params[:id] == ""
-      'gah'
-    else
-      'Nothing here yet '
-    end
+    redirect 'http://blog.eightbitraptor.com', 301
   end
 
 end
