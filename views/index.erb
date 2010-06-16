@@ -1,30 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>eightbitraptor</title>
-  <link rel="stylesheet" href="/css/main.css" type="text/css" charset="utf-8">
-  <link rel="openid.server" href="http://server.myid.net/server" />
-  <link rel="openid.delegate" href="http://eightbitraptor.myid.net/" />
-  <meta http-equiv="X-XRDS-Location" content="http://eightbitraptor.myid.net/xrds" />
-</head>
-<body>
-  <div id="heading">
-    <span class="page_heading"><h1>eightbitraptor <span class="subtitle">Rawr.</span></h1></span>
-    <img class="rapt0r" src="/images/raptor_1.gif" />
-  </div>
-  <div id="content">
-    <p>My name's Matt. I'm a <a href="http://www.reevoo.com">System Admin</a>. I mostly do <a href="http://www.reevoo.com/labs/author/matthouse/">Linux and Ruby</a></p>
-    <p><a href="/writing">I write about stuff.</a></p>
-    <p>You can <a href="http://twitter.com/shadowaspect">follow me on twitter</a>, or <a href="cv.html">read my CV</a> (<a href="matthouse.pdf">also available as a pdf</a>).<p>
-    <p>Or you can just see what I've been <a href="http://last.fm/user/theshadowaspect">listening to</a>, <a href="http://myanimelist.net/profile/shrimphead">watching</a>, and <a href="http://github.com/shadowaspect">hacking on</a></p>
-    <div class="feed">
-      
-    </div>
-    <div class="footer">
-      <p>eightbitraptor is copyright Matt House, don't steal my design, I'm rubbish enough as it is</p>
-      <p>Content can be used elsewhere, just give me credit</p>
-    </div>
-  </div>
-</body>
-</html>
+<% locals[:posts].each do |post| %>
+  <h3><%= post.title %></h3>
+  <%= post.to_html %>
+  
+<% end %>
