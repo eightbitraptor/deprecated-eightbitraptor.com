@@ -10,7 +10,7 @@ class EightBitRaptor < Sinatra::Base
   enable :static
 
   get '/' do
-    erb :index, :locals => { :posts => Post.all }
+    haml :index, :locals => {:posts => Post.all}
   end
 
   get '/posts' do
@@ -19,7 +19,7 @@ class EightBitRaptor < Sinatra::Base
 
   get '/post/:name' do
     post = Post.find(params[:name])
-    erb :post, :locals => {:post => post}
+    haml :post, :locals => {:post => post}
   end
 
   get '/admin' do
