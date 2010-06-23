@@ -8,13 +8,12 @@
     %meta{ :'http-equiv' => 'X-XRDS-Location', :content => 'http://eightbitraptor.myid.net/xrds' }
     %meta{ :'http-equiv' => 'Content-type', :content => 'text/html; charset=utf-8' }
   %body
-    .middle-column
+    .main
       .site-header
         %h1 eightbitraptor.com
         %span Rawr
       .content
         = yield
-    .left-column
-      %p some stuff
     .right-column
-      %p some stuff
+      .nav
+        = partial :navigation
