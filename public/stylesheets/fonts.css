@@ -6,3 +6,7 @@
   font-family: "DroidSansMono";
   src: url(/public/fonts/DroidSansMono.ttf);
 }
+@font-face{
+  font-family: "Raleway";
+  src: url(/public/fonts/raleway_thin.ttf);
+}
