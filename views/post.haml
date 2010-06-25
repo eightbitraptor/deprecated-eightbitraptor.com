@@ -1,5 +1,6 @@
 .post
-  %h2= locals[:post].title
+  %h2
+    %a{:href => "/posts/#{locals[:post].printable_pathname}"}= locals[:post].title
   .post-body= to_html(locals[:post].body)
   .tags
     %p 
