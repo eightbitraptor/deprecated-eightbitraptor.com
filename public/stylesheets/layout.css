@@ -2,7 +2,8 @@ body{
   font-family: 'DroidSans', 'Verdana', 'Helvetica', sans-serif;
   font-size: 0.9em;
   margin:0; padding:0;
-  background-color: #99E9a3;
+  background-color: #343434;
+  color:#fff;
   
 }
 h1,h2 {
@@ -10,17 +11,24 @@ h1,h2 {
   padding: 0;
 }
 
+.container {
+  width: 960px;
+  margin: 0 auto 0 auto;
+}
+
 .site-header {
-  width:100%;
-  background: #57E964;
+  background: #000;
   border-bottom: 6px solid #54C571;
-  padding:12px;
+  padding: 12px;
+  color:#f8f8f8;
 }
 .site-header h1 {
   font-family: "Raleway";
   font-size: 4em;
   letter-spacing: 0.2em;
   margin:6px;
+  width:960px;
+  margin: 0 auto;
 }
 .site-header h1 span {
   font: italic 0.5em Georgia, Palatino, serif;
@@ -31,7 +39,6 @@ h1,h2 {
 .main{
   width:600px;
   float:left;
-  background-color:#fff;
   min-height:100%;
 }
 
@@ -43,5 +50,14 @@ h1,h2 {
 .right-column {
   width: 300px;
   float: left;
-  background-color: #99E9a3;
+  margin-left: 35px;
+  padding-left:25px;
+  border-left:1px solid #9a9a9a;
 }
+
+.post {
+  margin-bottom:3em;
+  border-bottom:1px solid green;
+  color: #cdcdcd;
+}
+
