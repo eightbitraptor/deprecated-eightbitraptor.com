@@ -20,9 +20,13 @@ class EightBitRaptor < Sinatra::Base
     redirect '/', 301
   end
 
-  get '/post/:name' do
-    post = Post.find(params[:name])
+  get '/posts/:name' do |name|
+    post = Post.find(name)
     haml :post, :locals => {:post => post}
+  end
+
+  get '/categories/:category' do |category|
+    haml :categories, :locals => { :posts => Post.find_by_category(category)}
   end
 
   get '/admin' do

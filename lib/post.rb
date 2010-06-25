@@ -1,35 +1,42 @@
 require 'maruku'
+require 'pathname'
+require 'pp'
 
 class Post
-
-  attr_accessor :body
 
   class << self
 
     def all
-      puts Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].inspect
       Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].map{ |path| new(path) }
     end
 
     def find(name)
       Dir[File.join(File.dirname(__FILE__), %W{.. posts #{name}.markdown})].map{|post| new(post) }.first
     end
+    
+    def find_by_category(category)
+      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].map{ |post| new(post) }.select{ |p|
+        p.tags.include? category
+      }
+    end
 
   end
-  
+
   def initialize(path)
     lines = File.open(path)
     options = {}
+    options[:printable_pathname] = Pathname.new(path).basename.to_s.split('.')[0]
     body = []
     lines.each do |l|
       if l.match /::(.*)::(.*)/
-        options[$1] = $2.strip
+        options[$1.to_sym] = $2.strip
       else
         body << l
       end
     end
     options.map do |option|
-      instance_variable_set("@#{option[0]}", option[1])
+      payload = ( option[0] == :tags ) ? option[1].split(',') : option[1]
+      instance_variable_set("@#{option[0]}", payload )
       self.class.send(:attr_accessor, "#{option[0]}")
     end
     instance_variable_set("@body", body.to_s)

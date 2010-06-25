@@ -1,0 +1,10 @@
+.post
+  %h2= locals[:post].title
+  .post-body= locals[:post].to_html
+  .tags
+    %p 
+      posted on
+      = locals[:post].published
+      and tagged with
+      - locals[:post].tags.each do |tag|
+        %a{ :href => "/categories/#{tag}" }= tag
