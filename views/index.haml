@@ -1,12 +1,3 @@
 - locals[:posts].each do |post|
-  .post
-    %h2= post.title
-    .post-body= to_html(post.slug)
-    .tags
-      %p 
-        posted on
-        = post.published
-        and tagged with
-        - post.tags.each do |tag|
-          %a{ :href => "/categories/#{tag}" }= tag
+  = partial :post, :locals => { :post => post }
 
