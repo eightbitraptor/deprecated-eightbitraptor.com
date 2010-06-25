@@ -1,6 +1,6 @@
 .post
   %h2= locals[:post].title
-  .post-body= locals[:post].to_html
+  .post-body= to_html(locals[:post].body)
   .tags
     %p 
       posted on

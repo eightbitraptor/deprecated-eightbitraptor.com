@@ -1,7 +1,7 @@
 - locals[:posts].each do |post|
   .post
     %h2= post.title
-    .post-body= post.to_html
+    .post-body= to_html(post.slug)
     .tags
       %p 
         posted on
