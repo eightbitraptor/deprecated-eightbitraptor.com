@@ -1,0 +1,4 @@
+.slider
+  = Post.all.each do |post|
+    .post-preview
+      = to_html(post.slug)

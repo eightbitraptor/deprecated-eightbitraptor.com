@@ -1,0 +1,32 @@
+.post-preview-container{
+  position: relative;
+  width: 600px;
+  height: 250px;
+  border: 1px solid lime;
+  overflow: hidden;
+}
+.slider{
+  width:4000px;
+  height: 248px;
+  border:1px solid black;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+.post-preview {
+  width:596px;
+  height:246px;
+  float:left;
+  border: 1px solid blue;
+}
+
+.slider-nav {
+  font: 3em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  position: absolute;
+  top: 90px;
+  display:block;
+}
+#slider-left{
+  left: 10px;
+}
+#slider-right {
+  right: 10px;
+}

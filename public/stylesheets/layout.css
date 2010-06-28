@@ -11,9 +11,14 @@ h1,h2 {
   padding: 0;
 }
 
-.container {
-  width: 960px;
-  margin: 0 auto 0 auto;
+a{
+  color: #999;
+  text-decoration: none;
+  -webkit-transition: all 0.2s linear;
+}
+a:hover,
+a:focus {
+  color: #fefefe;
 }
 
 .site-header {
@@ -36,10 +41,35 @@ h1,h2 {
   margin-left: -25px ;
 }
 
-.main{
+.container {
+  width: 960px;
+  margin: 0 auto 0 auto;
+}
+
+.top .post-preview-container {
   width:600px;
+  height:250px;
+  border:1px solid black;
   float:left;
-  min-height:100%;
+}
+
+.top .right-column {
+  width: 290px;
+  float:left;
+  margin-left: 35px;
+  padding-left:25px;
+}
+
+/* Clear internal floats */
+div.top:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+ol.tabs {
+  zoom: 1;
 }
 
 .content{
@@ -47,13 +77,6 @@ h1,h2 {
   width:100%;
 }
 
-.right-column {
-  width: 300px;
-  float: left;
-  margin-left: 35px;
-  padding-left:25px;
-  border-left:1px solid #9a9a9a;
-}
 
 .post {
   margin-bottom:3em;
