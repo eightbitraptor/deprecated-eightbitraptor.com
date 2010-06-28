@@ -2,31 +2,35 @@
   position: relative;
   width: 600px;
   height: 250px;
-  border: 1px solid lime;
   overflow: hidden;
 }
 .slider{
   width:4000px;
-  height: 248px;
-  border:1px solid black;
+  height: 250px;
   -webkit-transition: all 0.5s ease-in-out;
 }
 .post-preview {
-  width:596px;
-  height:246px;
+  width:530px;
+  height:250px;
   float:left;
-  border: 1px solid blue;
+  background: #dedede;
+  color:#000;
+  padding:0 35px;
 }
-
 .slider-nav {
-  font: 3em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 2em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  color:#000;
   position: absolute;
-  top: 90px;
+  top: 0px;
   display:block;
+  width:30px;
+  height:100%;
+  background: rgba(22,22,22,0.3);
+  line-height:8em;
 }
 #slider-left{
-  left: 10px;
+  left: 0px;
 }
 #slider-right {
-  right: 10px;
+  right: 0px;
 }
