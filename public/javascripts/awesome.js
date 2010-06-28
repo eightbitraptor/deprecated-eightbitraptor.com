@@ -7,41 +7,31 @@ jQuery(document).ready(function($){
   $('#slider-left').hide();
 
   function isAtBeginning(){
-    var retVal = false;
-    if (parseInt($('.slider').css('margin-left'), 10) == 0){
-      retVal = true;
-    };
-    return retVal;
+    return (parseInt($('.slider').css('margin-left'), 10) == 0);
   }
 
   function isAtEnd(){
-    var retVal = false;
     var marg = parseInt($('.slider').css('margin-left'), 10);
-    if ( -marg == slideWidth * ($('.post-preview').length -1 )){
-      retVal = true;
-    };
-    return retVal;
+    return ( -marg == slideWidth * ($('.post-preview').length -1 ));
   }
 
-  $('#slider-left').click(function(){
-    var sliderMargin = parseInt($('.slider').css('margin-left'), 10);
-    var newMargin = (sliderMargin + slideWidth) + 'px';
-    if (isAtBeginning()){
-      $('#slider-left').hide();
-    }else{
-      $('#slider-right').show();
-      $('.slider').css('margin-left', newMargin);
-    };
-  });
+  function mover(d) {
+    return function() {
+      var sliderMargin = parseInt($('.slider').css('margin-left'), 10);
+      var newMargin = (sliderMargin + d) + 'px';
 
-  $('#slider-right').click(function(){
-    var sliderMargin = parseInt($('.slider').css('margin-left'), 10);
-    var newMargin = (sliderMargin - slideWidth) + 'px';
-    if (isAtEnd()){
-      $('#slider-right').hide();
-    }else{
-      $('#slider-left').show();
       $('.slider').css('margin-left', newMargin);
-    };
-  });
+      if (isAtBeginning()){
+        $('#slider-left').hide();
+        $('#slider-right').show();
+      }
+      if (isAtEnd()){
+        $('#slider-left').show();
+        $('#slider-right').hide();
+      }
+    }
+  }
+
+  $('#slider-left').click(mover(slideWidth));
+  $('#slider-right').click(mover(-slideWidth));
 });
