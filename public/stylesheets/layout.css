@@ -68,7 +68,7 @@ div.top:after {
   clear: both;
   visibility: hidden;
 }
-ol.tabs {
+div.top {
   zoom: 1;
 }
 
@@ -76,8 +76,6 @@ ol.tabs {
   padding:10px;
   width:100%;
 }
-
-
 .post {
   margin-bottom:3em;
   border-bottom:1px solid green;
