@@ -22,12 +22,12 @@ jQuery(document).ready(function($){
       var newMargin = (sliderMargin + d) + 'px';
 
       $('.slider').css('margin-left', newMargin);
+      $('#slider-left').show();
+      $('#slider-right').show();
       if (isAtBeginning()){
         $('#slider-left').hide();
-        $('#slider-right').show();
       }
       if (isAtEnd()){
-        $('#slider-left').show();
         $('#slider-right').hide();
       }
     }
