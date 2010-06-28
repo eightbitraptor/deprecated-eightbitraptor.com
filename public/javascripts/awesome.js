@@ -16,7 +16,8 @@ jQuery(document).ready(function($){
   }
 
   function mover(d) {
-    return function() {
+    return function(event) {
+      event.preventDefault;
       var sliderMargin = parseInt($('.slider').css('margin-left'), 10);
       var newMargin = (sliderMargin + d) + 'px';
 
