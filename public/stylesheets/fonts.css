@@ -1,12 +1,12 @@
 @font-face{
   font-family: "DroidSans";
-  src: url(/public/fonts/DroidSans.ttf);
+  src: url(/fonts/DroidSans.ttf);
 }
 @font-face{
   font-family: "DroidSansMono";
-  src: url(/public/fonts/DroidSansMono.ttf);
+  src: url(/fonts/DroidSansMono.ttf);
 }
 @font-face{
   font-family: "Raleway";
-  src: url(/public/fonts/raleway_thin.ttf);
+  src: url(/fonts/raleway_thin.ttf);
 }
