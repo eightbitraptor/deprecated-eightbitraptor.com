@@ -19,7 +19,7 @@
   .container
     .top
       .post-preview-container
-        = partial :carousel
+        = partial :carousel, :locals => { :posts => locals[:posts]}
       .right-column
         .nav
           = partial :navigation

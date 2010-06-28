@@ -1,5 +1,5 @@
 ::title::       Another Test Post
-::published::   2010-05-05
+::published::   2010-06-05
 ::tags::        test,linux,ubuntu,some tag
 
 This is some of the post body the syntax is *markdown* which is pretty awesome

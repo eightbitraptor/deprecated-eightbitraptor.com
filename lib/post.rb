@@ -13,13 +13,16 @@ class Post
     def find(name)
       Dir[File.join(File.dirname(__FILE__), %W{.. posts #{name}.markdown})].map{|post| new(post) }.first
     end
-    
+
     def find_by_category(category)
       Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].map{ |post| new(post) }.select{ |p|
         p.tags.include? category
       }
     end
 
+    def most_recent(quant=1)
+      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].map{ |post| new(post) }.sort!.take(quant)
+    end
   end
 
   def initialize(path)
@@ -42,6 +45,10 @@ class Post
     end
     instance_variable_set("@body", body.to_s)
     self.class.send(:attr_accessor, "body")
+  end
+
+  def <=>(other)
+    self.published <=> other.published
   end
 
 end

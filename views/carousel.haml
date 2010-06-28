@@ -1,4 +1,4 @@
 .slider
-  = Post.all.each do |post|
+  = locals[:posts].each do |post|
     .post-preview
       = to_html(post.slug)

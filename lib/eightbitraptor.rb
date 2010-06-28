@@ -13,11 +13,11 @@ class EightBitRaptor < Sinatra::Base
   enable :static
 
   get '/' do
-    haml :index, :locals => {:posts => Post.all}
+    haml :index, :locals => {:posts => Post.most_recent(2)}
   end
 
   get '/posts' do
-    redirect '/', 301
+    haml :posts, :locals => {:posts => Post.all}
   end
 
   get '/posts/:name' do |name|
