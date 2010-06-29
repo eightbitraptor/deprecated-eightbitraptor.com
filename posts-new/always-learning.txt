@@ -1,13 +1,6 @@
---- 
-title:      Always Learning! Enumerable#inject and Hash#merge in Ruby
-created_at: 2009-05-14 11:18:00.272596 +00:00
-draft: nil
-layout: default
-filter:
-  - erb
-  - textile
---- 
-<div class="post_header"><h2><%= link_to_page(@page) %></h2><span class="post_date">Posted on <%= @page.created_at.strftime('%d %B %Y') %></span></div>
+::title::       Always Learning! Enumerable#inject and Hash#merge in Ruby
+::published::   2009-05-14
+::tags::        ruby,programming,tutorial
 
 I learned something cool today. While discussing neat one liners in Ruby, someone suggested a potential challenge, it went something like this:
 
@@ -31,7 +24,6 @@ So how would you do it? The solution I came up with after a couple of minutes wa
 h = Hash.new(0)
 [1,1,2,3,2,4,5,3,3,3,1,1,2,6,5,5,5,5].each { |i| h[i] += 1 }
 puts h
-
 <% end -%>
 
 This is a fairly simple solution, first you create a new hash and initialise every value with 0, then we iterate over each value of the array, passing the value to a block which finds the hash entry with the correct key and increments its value (this is acheivable because we initialise our hash with a Fixnum as a default value). I thought this was pretty neat but it turns out, as with most things in Ruby, that there is a much cooler way :)
@@ -40,7 +32,6 @@ It looks like this:
 
 <% coderay :lang => 'ruby', :line_numbers => 'inline' do %>
 p [1,1,2,3,2,4,5,3,3,3,1,1,2,6,5,5,5,5].inject(Hash.new(0)){ |memo,i| memo.merge({i => memo[i] += 1}) } 
-
 <% end -%>
 
 So how is this working?
@@ -56,7 +47,6 @@ irb(main):007:0> {"first" => 2}.merge({"second" => 2})
 => {"second"=>2, "first"=>2}
 irb(main):001:0> {"first" => 2}.merge({"first" => 4})
 => {"first"=>4}
-
 <% end %>
 
 So what is our merge function doing? It's passing in an empty hash initialised with zeros, and for every entry in the array it's merging in a new hash that just contains the incremented value for that particular key.

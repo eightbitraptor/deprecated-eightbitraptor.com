@@ -1,13 +1,7 @@
---- 
-title:      Using Webby
-created_at: 2009-01-30 18:16:00.272596 +00:00
-draft: nil
-layout: default
-filter:
-  - erb
-  - textile
---- 
-<div class="post_header"><h2><%= link_to_page(@page) %></h2><span class="post_date">Posted on <%= @page.created_at.strftime('%d %B %Y') %></span></div>
+::title::       Using Webby  
+::published::   2009-01-30
+::tags::        old,pointless
+
 
 Recently I found the time to give theshadowaspect.com a much needed redesign and in the process decided to switch systems from the hybrid wordpress/custom thing that I was using before. Seeing as I am a sysadmin by trade working in a Ruby on Rails shop ("reevoo.com":http://www.reevoo.com for those that are interested) I wanted to use something Ruby based. Unfortunately my options were severly limited by the hosting environment that I am using.
 

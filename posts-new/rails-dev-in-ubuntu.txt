@@ -1,13 +1,6 @@
---- 
-title:      Rails Development with Ubuntu
-created_at: 2009-03-31 19:35:00.272596 +00:00
-draft: nil
-layout: default
-filter:
-  - erb
-  - textile
---- 
-<div class="post_header"><h2><%= link_to_page(@page) %></h2><span class="post_date">Posted on <%= @page.created_at.strftime('%d %B %Y') %></span></div>
+::title::       Rails Development with Ubuntu
+::published::   2009-03-31
+::tags::        ubuntu,netbooks,rails,ruby,programming
 
 Having recently purchased myself a new Dell Mini 9, I got a chance to set up a development environment for rails apps so that I can hack on the train to and from work. It's not particularly hard but I thought I'd document it for reference and hopefully someone will find this useful.
 
