@@ -18,12 +18,12 @@
       %span< Rawr
   .container
     .top
-      .post-preview-container
-        = partial :carousel, :locals => { :posts => locals[:posts]}
       .right-column
         .nav
           = partial :navigation
         .about
           = partial :about
+      .post-preview-container
+        = partial :carousel, :locals => { :posts => locals[:posts]}
     .main
       = yield
