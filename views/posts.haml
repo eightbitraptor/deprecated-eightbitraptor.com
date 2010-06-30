@@ -1,0 +1,4 @@
+-locals[:posts].each do |post|
+  %h2
+    %a= post.title
+  =to_html(post.body)
