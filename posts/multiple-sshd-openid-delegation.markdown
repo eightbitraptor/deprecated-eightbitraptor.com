@@ -14,25 +14,25 @@ But what if I want to access from outside my network, for instance I want to ssh
 
 This is actually pretty easy to get set up. But there are a couple of gotchas and these instructions pertain to Arch Linux, but the basic principles are the same for any distro.
 
-# Copy the contents of <code>/etc/ssh</code> to <code>/etc/ssh-external</code> and remove the specific host keys in the new directory.
-# Edit the new sshd_config, and customise it to your liking making sure to pay attention to the following settings:<br /><br />
-<% coderay :lang => 'nil', :line_numbers => 'inline' do -%>
-Port 55225 # A new higher port to listen on
-PidFile /var/run/sshd-external.pid # Make sure that this new instance uses a seperate pid
-PubkeyAuthentication yes # enable Public Key Auth
-PasswordAuthentication no # and don't let users use passwords
-AllowUsers extern # Allow access only to the extern user
-<% end %>
-# Copy (or symlink) the sshd binary to a new location, eg. sshd-external. This is not strictly necessary however it makes tracking connections easier as the processes will show up seperately in ps and top etc.
-# copy the file <code>/etc/rc.d/sshd</code> to a new location eg. <code>/etc/rc.d/sshd-external</code>
-# Edit the new rc file to point to your new sshd binary and new host_key locations.<br /><br /> There is also a reference to include the file <code>/etc/conf.d/sshd</code> which defines the $SSHD_ARGS variable. You'll need to redefine the include in your new ssh rc script so that it pulls in a different file. I suggest <code>/etc/conf.d/sshd-external</code>. Once this file is defined we can use it to set our $SSHD_ARGS variable. This will need to point to our new config file and host key explicitly to stop the sshd-external daemon using the default values, as these are already in use by our standard sshd; This can be done like so:<br /><br />
-<% coderay :lang => 'nil', :line_numbers => 'inline' do -%>
-#
-# Parameters to be passed to sshd
-#
-SSHD_ARGS="-f /etc/ssh-external/sshd_config -h /etc/ssh-external/ssh_host_rsa_key"
-<% end %>
-# Once this is all set up you should then be able to login from anywhere. Providing you have remembered to take your private key with you and that the user you configured for access has your public key in his <code>~/.ssh/authorized_keys</code> file, and that you have remembered to open the correct port on your router/firewall ;)
+* Copy the contents of <code>/etc/ssh</code> to <code>/etc/ssh-external</code> and remove the specific host keys in the new directory.
+* Edit the new sshd_config, and customise it to your liking making sure to pay attention to the following settings:<br /><br />
+
+    Port 55225 # A new higher port to listen on
+    PidFile /var/run/sshd-external.pid # Make sure that this new instance uses a seperate pid
+    PubkeyAuthentication yes # enable Public Key Auth
+    PasswordAuthentication no # and don't let users use passwords
+    AllowUsers extern # Allow access only to the extern user
+
+* Copy (or symlink) the sshd binary to a new location, eg. sshd-external. This is not strictly necessary however it makes tracking connections easier as the processes will show up seperately in ps and top etc.
+* copy the file <code>/etc/rc.d/sshd</code> to a new location eg. <code>/etc/rc.d/sshd-external</code>
+* Edit the new rc file to point to your new sshd binary and new host_key locations.<br /><br /> There is also a reference to include the file <code>/etc/conf.d/sshd</code> which defines the $SSHD_ARGS variable. You'll need to redefine the include in your new ssh rc script so that it pulls in a different file. I suggest <code>/etc/conf.d/sshd-external</code>. Once this file is defined we can use it to set our $SSHD_ARGS variable. This will need to point to our new config file and host key explicitly to stop the sshd-external daemon using the default values, as these are already in use by our standard sshd; This can be done like so:
+
+    #
+    # Parameters to be passed to sshd
+    #
+    SSHD_ARGS="-f /etc/ssh-external/sshd_config -h /etc/ssh-external/ssh_host_rsa_key"
+    
+* Once this is all set up you should then be able to login from anywhere. Providing you have remembered to take your private key with you and that the user you configured for access has your public key in his <code>~/.ssh/authorized_keys</code> file, and that you have remembered to open the correct port on your router/firewall ;)
 
 There are a couple of extra things that you can do to improve security in addition to the standard key based auth above, one of which is to restrict your external user to a restrictive shell (ie. <code>/bin/bash --restrictive</code>) or a chroot jail, I leave this as an excercise for the reader.
 
@@ -42,11 +42,9 @@ This is going to be a much shorter section that the previous one! I love OpenID 
 
 It turns out that you can, and most OpenID providers will play nice and give you instructions on how to set it up. Basically it just involves some new information in the head of your websites markup. That extra info looks a lot like this:
 
-<%coderay :lang => 'html', :line_numbers => 'inline' do -%>
-   <link rel="openid.server" href="http://server.myid.net/server" /> 
-   <link rel="openid.delegate" href="http://username.myid.net/" /> 
-   <meta http-equiv="X-XRDS-Location" content="http://username.myid.net/xrds" />
-<% end %>
+    <link rel="openid.server" href="http://server.myid.net/server" /> 
+    <link rel="openid.delegate" href="http://username.myid.net/" /> 
+    <meta http-equiv="X-XRDS-Location" content="http://username.myid.net/xrds" />
 
 Obviously replace username with your actual OpenID providers username!
 

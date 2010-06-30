@@ -8,9 +8,9 @@ I needed a way of managing my infrastructure that doesn't involve me sitting dow
 
 And that's where Puppet comes in :)
 
-h4. What is Puppet
+<h4>What is Puppet</h4>
 
-"Puppet is a configuration management framework":http://reductivelabs.com/products/puppet/. It's kind of a logical step forward from "Cfengine":http://www.cfengine.org. It is written in Ruby, by Luke Kanies of Reductive Labs and basically consists of 3 things:
+[Puppet is a configuration management framework](http://reductivelabs.com/products/puppet/). It's kind of a logical step forward from [Cfengine](http://www.cfengine.org). It is written in Ruby, by Luke Kanies of Reductive Labs and basically consists of 3 things:
 
 * A domain specific language, for declaring configurations
 * A client and server application for distributing your configurations, and
@@ -20,21 +20,19 @@ Puppet makes deploying identical environments across one or multiple machines on
 
 It also deals with abstracting the operating system layer so that your puppet recipes can be OS agnostic, the packages are handled automatically your default package manager.
 
-h4. Why Puppet? What about the alternatives
+<h4>Why Puppet? What about the alternatives</h4>
 
 There are a couple of alternatives to Puppet. Cfengine, which Puppet is meant to be a replacement for, owing to Luke Kanies experience at writing custom Cfengine plugins. The Puppet Wiki has a very good article on why Puppet is not Cfengine and how it compares, which makes very interesting reading.
 
 The other main alternative is Chef. Chef is also written in Ruby and is definitely worth keeping an eye on. It tries to alleviate some of the main issues in Puppet, mainly that instead of a custom DSL the recipes are written in Ruby, which lets you do something like this:
 
-<% coderay :lang => 'ruby', :line_numbers => 'inline' do -%>
-node[:gems].each do |gem|
-  gem_package gem[:name] do
-    version gem[:version]
-    source gem[:source]
-    action :install
-  end
-end
-<% end %>
+    node[:gems].each do |gem|
+      gem_package gem[:name] do
+        version gem[:version]
+        source gem[:source]
+        action :install
+      end
+    end
 
 where gems is just a massive hash of ruby gems, versions and sources. Currently in Puppet, installing a named gem with a specific version requires a seperate package declaration for each package, which isn't very DRY and can clutter up your recipes a bit.
 
@@ -44,11 +42,11 @@ h4. Installing Puppet and setting up the Puppet Master
 
 Puppet is pretty easy to set up, and on a blank install of Ubuntu the process is pretty much as follows:
 
-# Install Ruby, and Rubygems
-# Install Puppet
-# Write/Pull your recipes into <code>/etc/puppet/</code>
-# Start the Puppetmaster daemon and create a certificate for your client
-# Run Puppet.
+* Install Ruby, and Rubygems
+* Install Puppet
+* Write/Pull your recipes into <code>/etc/puppet/</code>
+* Start the Puppetmaster daemon and create a certificate for your client
+* Run Puppet.
 
 I prefer to use a custom rubygems install rather than the provided package. This is due to Debian's lack of support for Rubygems because they have apt and don't like having multiple package providers. 
 
@@ -56,53 +54,43 @@ I disagree with this because Rubygems, like CPAN or Python Eggs, is a very speci
 
 So lets install ruby, clone the Puppet repository, install Rubygems and then install Puppet.
 
-<% coderay :lang => 'ruby', :line_numbers => 'inline' do -%>
-sudo apt-get install ruby git-core
-cd /etc/ && git clone git://github.com/shadowaspect/puppet.git
-sudo dpkg -i /etc/puppet/files/deb/rubygems1.8-1.3.5_i386.deb
-sudo gem install puppet
-<% end %>
+    sudo apt-get install ruby git-core
+    cd /etc/ && git clone git://github.com/shadowaspect/puppet.git
+    sudo dpkg -i /etc/puppet/files/deb/rubygems1.8-1.3.5_i386.deb
+    sudo gem install puppet
 
 Now we need to look at starting the server with the correct certificate name, my recipes assume that your puppetmaster host is called puppet, so make sure that it is configured in your hosts file and start up the puppetmaster with:
 
-<% coderay :lang => 'ruby', :line_numbers => 'inline' do -%>
-sudo puppetmasterd --certname puppet
-<% end %>
+    sudo puppetmasterd --certname puppet
 
 So now we have a repository of Puppet recipes and our puppetmaster running you can run puppet on the machine with
 
-<% coderay :lang => 'ruby', :line_numbers => 'inline' do -%>
-sudo puppetd --test --verbose
-<% end %>
+    sudo puppetd --test --verbose
 
 This will fail the first time due to an invalid client certificate, to rectify this you need to have the puppetmaster sign the client cert, you can do this by running (on the master)
 
-<% coderay :lang => 'ruby', :line_numbers => 'inline' do -%>
-sudo puppetca -l # for a list of unsigned certs
-sudo puppetca -s <certname> # from the above list
-<% end %>
+    sudo puppetca -l # for a list of unsigned certs
+    sudo puppetca -s <certname> # from the above list
 
 h4. Writing Recipes
 
 Puppet pulls it's configuration from the files located in /etc/puppet. It basically assumes a couple of things:
 
-# that you have a site.pp file containing node definitions for each machine/class of machine on the network
-# you have a puppet.conf file detailing some information about the actual puppet process itself.
+* that you have a site.pp file containing node definitions for each machine/class of machine on the network
+* you have a puppet.conf file detailing some information about the actual puppet process itself.
 
 Puppet has several useful constructs available for writing recipes, stuff like classes and basic inheritance, and also defines for creating your own custom functions, you can see examples of this by checking out my github repository, but a basic node definition would look like this:
 
-<% coderay :lang => 'ruby', :line_numbers => 'inline' do -%>
-node mattsmachine{
-  package{ "apt":
-    ensure => installed,
-  }
-  file{"/etc/apt/sources.list":
-    ensure => present,
-    owner => root,
-    require => Package["apt"]
-  }
-}
-<% end %>
+    node mattsmachine{
+      package{ "apt":
+        ensure => installed,
+      }
+      file{"/etc/apt/sources.list":
+        ensure => present,
+        owner => root,
+        require => Package["apt"]
+      }
+    }
 
 This noddy little example just makes sure that apt is installed and that the sources.list is present on the machine. You can do so much more awesome stuff than this, for which I advise you to check out the excellent tutorials on the Puppet site, and have a browse around my custom Puppet repository.
 

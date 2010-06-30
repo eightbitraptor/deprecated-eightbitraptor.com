@@ -4,29 +4,23 @@
 
 After spending ages meticulously installing gems with 
 
-<% coderay :lang => 'ruby', :line_numbers => 'inline' do -%>
-matthouse [~] > sudo gem install some-random-gem --no-ri --no-rdoc
-<% end %>
+    matthouse [~] > sudo gem install some-random-gem --no-ri --no-rdoc
 
-I finally got round to trying to find a better way. It turns out that rubygems has it's own config file, which is cool. It's located at ~/.gemrc and is a simple yaml file.
+I finally got round to trying to find a better way. It turns out that rubygems has it's own config file, which is cool. It's located at ~/.gemrc and is a simple yaml file. My gemrc now looks like this:
 
-My gemrc now looks like this:
+::fold::
 
-<% coderay :lang=>'ruby', :line_numbers => 'inline' do -%>
-:update_sources: true
-:sources: 
-- http://gems.rubyforge.org/
-- http://gems.github.com
-:backtrace: false
-:verbose: true
-gem: --no-ri --no-rdoc
-<% end %>
+    :update_sources: true
+    :sources: 
+    - http://gems.rubyforge.org/
+    - http://gems.github.com
+    :backtrace: false
+    :verbose: true
+    gem: --no-ri --no-rdoc
 
 You can find out more about the options by running
 
-<% coderay :lang => 'ruby' do -%>
-matthouse [~] > gem help environment
-<% end %>
+    matthouse [~] > gem help environment
 
 The options in my config file work as follows
 
