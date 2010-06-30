@@ -13,7 +13,7 @@ class EightBitRaptor < Sinatra::Base
   enable :static
 
   get '/' do
-    haml :index, :locals => {:posts => Post.most_recent(3)}
+    haml :index, :layout => :home_layout, :locals => {:posts => Post.most_recent(3)}
   end
 
   get '/posts' do
