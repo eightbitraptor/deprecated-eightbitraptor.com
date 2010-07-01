@@ -31,7 +31,7 @@ class Post
     options[:printable_pathname] = Pathname.new(path).basename.to_s.split('.')[0]
     body = []
     lines.each do |l|
-      if l.match /::([^fold].*)::(.*)/
+      if l.match /^::([^fold].*)::(.*)$/
         options[$1.to_sym] = $2.strip
       else
         body << l
