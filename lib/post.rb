@@ -7,7 +7,7 @@ class Post
   class << self
 
     def all
-      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].map{ |path| new(path) }
+      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].map{ |path| new(path) }.sort!
     end
 
     def find(name)
@@ -17,7 +17,7 @@ class Post
     def find_by_category(category)
       Dir[File.join(File.dirname(__FILE__), %w{.. posts *.markdown})].map{ |post| new(post) }.select{ |p|
         p.tags.include? category
-      }
+      }.sort!
     end
 
     def most_recent(quant=1)
@@ -48,7 +48,7 @@ class Post
   end
 
   def <=>(other)
-    self.published <=> other.published
+    other.published <=> self.published
   end
 
 end
