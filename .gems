@@ -1,2 +1,4 @@
 rack-force_domain
 maruku
+sinatra
+haml
