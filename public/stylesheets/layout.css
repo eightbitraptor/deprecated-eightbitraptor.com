@@ -1,6 +1,6 @@
 body{
   font-family: 'DroidSans', 'Verdana', 'Helvetica', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.75em;
   margin:0; padding:0;
   color:#000;
   background-color:#ccdeef;
@@ -11,11 +11,11 @@ h1,h2 {
 }
 pre,
 code {
-  font: 1em "DroidSansMono", "Menlo", monospace;
+  font: 0.9em "DroidSansMono", "Menlo", monospace;
   display:block;
   color:#fff;
   background-color: #000;
-  padding:12px 5px;
+  padding:8px 5px;
   overflow:hidden;
 }
 a{
@@ -30,9 +30,10 @@ a:focus {
 
 .container {
   background-color:#fff;
-  width: 960px;
+  width: 800px;
   margin: 3em auto;
   -webkit-box-shadow: 0 0  50px #222;
+  -moz-box-shadow: 0 0  50px #222;
   border:1px solid  #000;
 }
 .navigation ul{
@@ -43,23 +44,23 @@ a:focus {
 }
 .navigation ul li{
   display:inline-block;
-  width: 50px;
-  border-right:2px dotted #000;
-  margin:0 12px;
+  width: 45px;
+  border-right:1px dotted #000;
+  margin:0 9px;  
 }
 .navigation li.last{
   border-right:none;
 }
 .site-header {
   border-bottom: 6px solid #54C571;
-  padding: 12px;
+  padding: 9px;
 }
 .site-header h1 {
   font-family: "Raleway";
   font-size: 4em;
   letter-spacing: 0.2em;
   margin:6px;
-  width:960px;
+  width:800px;
   margin: 0 auto;
 }
 .site-header h1 span {
@@ -78,7 +79,7 @@ a:focus {
 }
 
 .main {
-  margin:1em 12px;
+  margin:1em 9px;
 }
 
 .post {
