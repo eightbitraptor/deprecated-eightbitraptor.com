@@ -1,12 +1,9 @@
-html{
-  background-color: #90ff90;
-}
 body{
   font-family: 'DroidSans', 'Verdana', 'Helvetica', sans-serif;
   font-size: 0.9em;
   margin:0; padding:0;
   color:#000;
-  background-color:#90ff90;
+  background-color:#ccdeef;
 }
 h1,h2 {
   margin: 0;
@@ -76,10 +73,15 @@ a:focus {
 }
 
 .post {
+  padding-bottom: 3em;
   margin-bottom:3em;
-  border-bottom:1px solid green;
+  border-bottom:1px solid #000;
   color: #222;
 }
-.post-title {
+.tags p {
+  margin:0;
+  padding:0;
+  font-style: italic;
+  color: #cdcdcd;
   font-size: 0.9em;
 }

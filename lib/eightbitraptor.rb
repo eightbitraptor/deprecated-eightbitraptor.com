@@ -25,6 +25,10 @@ class EightBitRaptor < Sinatra::Base
     haml :post, :locals => {:post => post}
   end
 
+  get '/about' do
+    haml :about
+  end
+
   get '/categories/:category' do |category|
     haml :categories, :locals => { :posts => Post.find_by_category(category)}
   end
