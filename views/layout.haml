@@ -3,15 +3,16 @@
   %head
     = partial :head
   %body
-  .site-header
-    %h1<
-      eightbitraptor.com
-      %span< Rawr
-  .container
-    .right-column
-      .nav
-        = partial :navigation
-      .about
-        = partial :about
-    .main.full-height
-      = yield
+    .container
+      .navigation
+        %ul
+          %li 
+            %a{:href => '/posts'} Blog
+          %li.last
+            %a{:href => '/about'} About
+      .site-header
+        %h1<
+          eightbitraptor.com
+          %span< Rawr
+      .main
+        = yield

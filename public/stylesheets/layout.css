@@ -1,10 +1,12 @@
+html{
+  background-color: #90ff90;
+}
 body{
   font-family: 'DroidSans', 'Verdana', 'Helvetica', sans-serif;
   font-size: 0.9em;
   margin:0; padding:0;
-  background-color: #343434;
-  color:#fff;
-  
+  color:#000;
+  background-color:#90ff90;
 }
 h1,h2 {
   margin: 0;
@@ -17,7 +19,6 @@ code {
   color:#fff;
   background-color: #000;
   padding:12px 5px;
-  width:600px;
   overflow:hidden;
 }
 a{
@@ -30,15 +31,32 @@ a:focus {
   color: #fefefe;
 }
 
+.container {
+  background-color:#fff;
+  width: 960px;
+  margin: 3em auto;
+  -webkit-box-shadow: 0 0  50px #222;
+  border:1px solid  #000;
+}
+.navigation ul{
+  list-style: none inside;
+  margin-left:0;
+  padding:0;
+  font-family: DroidSans;
+}
+.navigation ul li{
+  display:inline-block;
+  width: 50px;
+  border-right:2px dotted #000;
+  margin:0 12px;
+}
+.navigation li.last{
+  border-right:none;
+}
 .site-header {
-  background: #000;
   border-bottom: 6px solid #54C571;
   padding: 12px;
-
-  color:#f8f8f8;
-
-  background: #000 url('../images/raptor_1.gif') no-repeat bottom right;
-  background-position: 75% 100%;
+  color:#000;
 }
 .site-header h1 {
   font-family: "Raleway";
@@ -53,47 +71,14 @@ a:focus {
   color: #999;
   margin-left: -25px ;
 }
-
-.container {
-  width: 960px;
-  margin: 0 auto 0 auto;
-}
-
-.top .post-preview-container {
-  width:600px;
-  height:250px;
-  border:1px solid black;
-  float:left;
-}
-
-.right-column {
-  width: 290px;
-  float:right;
-  margin-left: 35px;
-  padding-left:25px;
-  margin-bottom: 1em;
-}
-
-/* Clear internal floats */
-div.top:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-div.top {
-  zoom: 1;
-}
-
 .main {
-  margin-top: 1em;
-  width: 600px;
+  margin:1em 12px;
 }
+
 .post {
   margin-bottom:3em;
   border-bottom:1px solid green;
-  color: #cdcdcd;
+  color: #222;
 }
 .post-title {
   font-size: 0.9em;

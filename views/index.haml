@@ -1,4 +1,2 @@
-I don't think the posts should live here as well as in the preview slider anymore.
-
-Now to find something else to do with this space
-
+- locals[:posts].each do |p|
+  = partial :post, :locals => {:post => p }
