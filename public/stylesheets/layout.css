@@ -35,7 +35,9 @@ a:focus {
   -webkit-box-shadow: 0 0  50px #222;
   -moz-box-shadow: 0 0  50px #222;
   border:1px solid  #000;
+  position:relative;
 }
+
 .navigation ul{
   list-style: none inside;
   margin-left:0;
@@ -51,6 +53,16 @@ a:focus {
 .navigation li.last{
   border-right:none;
 }
+
+.links{
+  position:absolute;
+  top:0; right:0;
+  margin: 8px;
+}
+.links a {
+  padding-left:9px;
+}
+
 .site-header {
   border-bottom: 6px solid #54C571;
   padding: 9px;
