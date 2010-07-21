@@ -1,0 +1,13 @@
+<div class="post">
+  <h2><a href=<%= "/posts/#{locals[:post].printable_pathname}" %>><%= locals[:post].title %></a></h2>
+  <div class="tags">
+    <p>posted on <%= pretty_date(locals[:post].published) %>, and tagged with
+      <% locals[:post].tags.each do |tag| %>
+        <a href="<%= "/categories/#{tag}" %>"><%= tag %></a>
+      <% end %>
+    </p>
+  </div>
+  <div class="post-body">
+    <%= to_html(locals[:post].body) %>
+  </div>
+</div>

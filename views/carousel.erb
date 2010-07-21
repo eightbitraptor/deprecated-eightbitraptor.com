@@ -1,0 +1,7 @@
+<div class="slider">
+  <% locals[:posts].each do |post| %>
+    <div class="post-preview">
+      <%= to_html post.slug %>
+    </div>
+  <% end %>
+</div>

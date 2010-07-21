@@ -13,24 +13,24 @@ class EightBitRaptor < Sinatra::Base
   enable :static
 
   get '/' do
-    haml :index, :locals => {:posts => Post.most_recent(3)}
+    erb :index, :locals => {:posts => Post.most_recent(3)}
   end
 
   get '/posts' do
-    haml :posts, :locals => {:posts => Post.all}
+    erb :posts, :locals => {:posts => Post.all}
   end
 
   get '/posts/:name' do |name|
     post = Post.find(name)
-    haml :post, :locals => {:post => post}
+    erb :post, :locals => {:post => post}
   end
 
   get '/about' do
-    haml :about
+    erb :about
   end
 
   get '/categories/:category' do |category|
-    haml :categories, :locals => { :posts => Post.find_by_category(category)}
+    erb :categories, :locals => { :posts => Post.find_by_category(category)}
   end
 
   get '/admin' do

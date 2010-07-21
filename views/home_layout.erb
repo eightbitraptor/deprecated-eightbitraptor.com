@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= partial :head %>
+  </head>
+  <body>
+    <div class="site-header">
+      <h1>eightbitraptor.com <span>Rawr</span></h1>
+    </div>
+    <div class="container">
+      <div class="top">
+        <div class="right-column">
+          <div class="nav">
+            <%= partial :nav %>
+          </div>
+          <div class="about">
+            <%= partial :about %>
+          </div>
+        </div>
+        <div class="post-preview-container">
+          <%= partial :carousel, :locals => {:posts => locals[:posts]} %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <%= yield %>
+    </div>
+  </body>
+</html>
