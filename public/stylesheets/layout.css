@@ -1,5 +1,5 @@
 body{
-  font-family: 'DroidSans', 'Verdana', 'Helvetica', sans-serif;
+  font-family: 'Lucida Grande', 'Verdana', 'Helvetica', sans-serif;
   font-size: 0.75em;
   margin:0; padding:0;
   color:#000;
@@ -9,8 +9,7 @@ h1,h2 {
   margin: 0;
   padding: 0;
 }
-pre,
-code {
+pre {
   font: 0.9em "DroidSansMono", "Menlo", monospace;
   display:block;
   color:#fff;
