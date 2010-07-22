@@ -4,11 +4,11 @@
 
 After finally getting fed up and giving iTunes the boot, I got round to making MPD work on my Mac. and unfortunately, apt-get install it ain't!
 
-First step is to actually get hold of and install mpd, if you're using sensible and using homebrew that's as easy as
+First step is to actually get hold of and install [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki), if you're using sensible and using [homebrew](http://mxcl.github.com/homebrew/) that's as easy as:
 
     brew install mpd
 
-Which will pull in all of the required dependancies and compile them all for you. Then comes the mpd config file. This is all pretty standard stuff, you can adapt from the standard and massively verbose example included with the mpd sources. Mine lives at /usr/local/Cellar/mpd/0.15.9/share/doc/mpd/mpdconf.example. The stuff you need to care about is:
+Which will pull in all of the required dependancies and compile them all for you. Then comes the mpd config file. This is all pretty standard stuff, you can adapt from the standard and massively verbose example included with the mpd sources. Mine lives at `/usr/local/Cellar/mpd/0.15.9/share/doc/mpd/mpdconf.example`. The stuff you need to care about is:
 
     music_directory
     playlist_directory
@@ -36,20 +36,41 @@ I use the excellent Theremin, which is an OSX native MPD client and does the job
 
 <h3>Last.fm</h3>
 
-Last fm Scrobbling is acheived by the use of the lastfmsubmitd daemon, and it's build in client lastpd. It's dead easy to set up. Clone the sources from Github and follow the instructions in the INSTALL file. The client scrobbler lives inside the contrib folder of the checkout.
+[Last fm](http://last.fm) Scrobbling is acheived by the use of the [lastfmsubmitd daemon](http://www.red-bean.com/decklin/lastfmsubmitd/), and it's build in client lastmp. It's dead easy to set up. Clone the sources from Github and follow the instructions in the INSTALL file. The client scrobbler lives inside the contrib folder of the checkout.
 
-I installed lastfmsubmitd to /usr/local/bin and created it's config file, and then simply copied the contrib/lastmp script to /usr/local/bin.
+I installed lastfmsubmitd to `/usr/local/bin` and created it's config file, and then simply copied the contrib/lastmp script to `/usr/local/bin`.
 
-One gotcha if you're not familiar with running Python stuff (I'm not) is that lastpd will bail out complaining it can't import libmpdclient2. this is easily fixed with:
+One gotcha if you're not familiar with running Python stuff (I'm not) is that lastmp will bail out complaining it can't import libmpdclient2. this is easily fixed with:
 
     easy_install py-libmpdclient2
 
-which will ramble on about install eggs, I guess these are pythons equivalent of gems.
+which will ramble on about installing eggs, I guess these are pythons equivalent of gems.
+
+Both of these daemons apparently need to be running to actually make scrobbling happen so I normally wrap these up in `/usr/local/bin/music_starter`, which looks like
+
+    #! /bin/sh
+    /usr/local/bin/mpd &&/usr/local/bin/lastfmsubmitd && /usr/local/bin/lastmp
 
 <h3>Tying it all together</h3>
 
-By this point I just wanted to listen to some music so I skipped out creating a LaunchDaemon plist and all that bollocks and wrote a wrapper script to start lastmp at the same time as mpd and dumped it in the crontab to happen on system boot. my crontab has this entry in it:
+You can start the whole kit and caboodle on boot by creating the following plist file and adding it to launchctl:
 
-    @reboot sudo -u mpd '/usr/local/bin/mpd && /usr/local/bin/lastmp'
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+    	<key>Disabled</key>
+    	<false/>
+    	<key>Label</key>
+    	<string>com.eightbitraptor.mpd</string>
+    	<key>Program</key>
+      <string>/usr/local/bin/music_starter</string>
+    </dict>
+    </plist>
 
-All that remains is to either reboot or start the services up manually and the job's a good'un 
+I put this in `/Library/LaunchDaemons/com.eightbitraptor.mpd.plist`. Add it to launchd and start it like this:
+
+    sudo launchctl load -w /Library/LaunchDaemons/com.eightbitraptor.mpd.plist
+    sudo launchctl start com.eightbitraptor.mpd.plist
+
+And Job done! Now you too can get rid of stinking iTunes.
