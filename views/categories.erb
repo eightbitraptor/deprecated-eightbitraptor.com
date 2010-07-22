@@ -1,4 +1,5 @@
 <ul>
   <% locals[:posts].each do |post| %>
   <li><a class="post-link" href="<%=  "/posts/#{post.printable_pathname}" %>"><%= post.title %></a></li>
+  <% end %>
 </ul>
