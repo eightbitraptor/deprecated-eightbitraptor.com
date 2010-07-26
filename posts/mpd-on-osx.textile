@@ -1,5 +1,5 @@
 ::title::       Running MPD on OSX
-::published::   2010-10-21
+::published::   2010-07-21
 ::tags::        sysadmin,music
 
 After finally getting fed up and giving iTunes the boot, I got round to making MPD work on my Mac. and unfortunately, apt-get install it ain't!
