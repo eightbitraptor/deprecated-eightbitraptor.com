@@ -31,6 +31,10 @@ class EightBitRaptor < Sinatra::Base
   get '/admin' do
     redirect 'http://moe.enixns.com:2083', 301
   end
+  
+  get '/feed.xml' do
+    builder :feed, :locals => { :posts => Post.all }
+  end
 
   get '/about' do
     status 404

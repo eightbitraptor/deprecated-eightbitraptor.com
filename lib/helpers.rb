@@ -15,5 +15,9 @@ class EightBitRaptor < Sinatra::Base
     def pretty_date(date_in)
       Date.parse(date_in).strftime('%B %d %Y')
     end
+    
+    def post_url(post)
+      "http://eightbitraptor.com/posts/#{post.printable_pathname}"
+    end
   end
 end
