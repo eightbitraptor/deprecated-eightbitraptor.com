@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'haml'
 
 require File.join(File.dirname(__FILE__), "post.rb")
 require File.join(File.dirname(__FILE__), "helpers.rb")
