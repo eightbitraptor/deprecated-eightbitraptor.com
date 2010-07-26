@@ -1,4 +1,5 @@
 require 'date'
+require 'RedCloth'
 
 class EightBitRaptor < Sinatra::Base
   helpers do
@@ -8,12 +9,11 @@ class EightBitRaptor < Sinatra::Base
     end
 
     def to_html(content)
-      Maruku.new(content).to_html
+      RedCloth.new(content).to_html
     end
-    
+
     def pretty_date(date_in)
       Date.parse(date_in).strftime('%B %d %Y')
     end
-  
   end
 end
