@@ -42,7 +42,7 @@ h2 {
 li.github{ list-style: none inside url(../images/github.gif); }
 li.lastfm{ list-style: none inside url(../images/lastfm.gif); }
 li.twitter{ list-style: none inside url(../images/twitter.gif); }
-
+li.anidb{ list-style: none inside url(../images/anidb.gif); }
 
 .site-heading {
   background: #fff url(../images/site-header2.png) no-repeat top right ;
