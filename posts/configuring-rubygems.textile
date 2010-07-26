@@ -4,23 +4,27 @@
 
 After spending ages meticulously installing gems with 
 
-    matthouse [~] > sudo gem install some-random-gem --no-ri --no-rdoc
+<pre class="brush: bash">
+matthouse [~] > sudo gem install some-random-gem --no-ri --no-rdoc
+</pre>
 
 I finally got round to trying to find a better way. It turns out that rubygems has it's own config file, which is cool. It's located at ~/.gemrc and is a simple yaml file. My gemrc now looks like this:
 
-::fold::
-
-    :update_sources: true
-    :sources: 
-    - http://gems.rubyforge.org/
-    - http://gems.github.com
-    :backtrace: false
-    :verbose: true
-    gem: --no-ri --no-rdoc
+<pre class="brush: ruby">
+:update_sources: true
+:sources: 
+- http://gems.rubyforge.org/
+- http://gems.github.com
+:backtrace: false
+:verbose: true
+gem: --no-ri --no-rdoc
+</pre>
 
 You can find out more about the options by running
 
-    matthouse [~] > gem help environment
+<pre class="brush: bash">
+matthouse [~] > gem help environment
+</pre>
 
 The options in my config file work as follows
 
