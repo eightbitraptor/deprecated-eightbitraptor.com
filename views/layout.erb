@@ -4,25 +4,25 @@
     <%= partial :head %>
   </head>
   <body>
-    <div class="container">
-      <div class="navigation">
-        <ul>
-          <li><a href="/posts">Blog</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </div>
-      <div class="links">
-        <a href="http://myanimelist.net/profile/shrimphead"><img src="/images/mal.gif" /></a></li>
-        <a href="http://last.fm/user/theshadowaspect"><img src="/images/lastfm.gif" /></a></li>
-        <a href="http://github.com/eightbitraptor"><img src="/images/github.gif" /></a></li>
-        <a href="http://twitter.com/shadowaspect"><img src="/images/twitter.gif" /></a></li>
-      </div>
-      <div class="site-header">
-        <h1><a href="/">eightbitraptor.com <span>Rawr</span></a></h1>
-      </div>
-      <div class="main">
-        <%= yield %>
-      </div>
+    <div class="left-column">
+      <h1 class="site-heading">eightbitraptor.com <span>Rawr.</span></h1>
+      <ul class="navigation">
+        <li><a href="/posts">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/projects">Code</a></li>
+      </ul>
+      <ul class="profile-links">
+        <li class="lastfm"><a rel="me" href="http://last.fm/user/theshadowaspect">last.fm</a></li>
+        <li class="twitter"><a rel="me" href="http://twitter.com/shadowaspect">twitter</a></li>
+        <li class="github"><a rel="me" href="http://github.com/eightbitraptor">github</a></li>
+      </ul>
     </div>
+    <div class="right-column">
+      <%= yield %>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      SyntaxHighlighter.defaults['toolbar'] = false;
+      SyntaxHighlighter.all();
+    </script>
   </body>
 </html>
