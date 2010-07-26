@@ -25,16 +25,20 @@ class EightBitRaptor < Sinatra::Base
     erb :post, :locals => {:post => post}
   end
 
-  get '/about' do
-    erb :about
-  end
-
   get '/categories/:category' do |category|
     erb :categories, :locals => { :posts => Post.find_by_category(category)}
   end
 
   get '/admin' do
     redirect 'http://moe.enixns.com:2083', 301
+  end
+
+  get '/about' do
+    status 404
+  end
+
+  get '/projects' do
+    status 404
   end
 
 end
