@@ -96,4 +96,24 @@ li.anidb{ list-style: none inside url(../images/anidb.gif); }
   background-repeat: no-repeat;
 }
 
+div.latest-tweet p{
+  position:fixed;
+  bottom: 80px;
+  width: 15%;
+  margin: 6px;
+  padding:6px;
+  font: 0.7em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  color: #fff;
+  background-color: #999;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
 
+div.latest-tweet span {
+  position: fixed;
+  bottom: 75px;
+  left: 90px;
+  height: 15px;
+  width: 22px;
+  background: url(../images/triangle.png) no-repeat;
+}

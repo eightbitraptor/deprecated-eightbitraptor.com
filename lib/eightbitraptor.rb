@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'net/http'
+require 'json'
 
 require File.join(File.dirname(__FILE__), "post.rb")
 require File.join(File.dirname(__FILE__), "helpers.rb")
