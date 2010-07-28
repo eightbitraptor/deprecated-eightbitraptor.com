@@ -16,7 +16,7 @@ a:focus {
   color: #cdcdcd;
 }
 a:visited {
-  color: #999;
+  color: #aaa;
 }
 
 h2 {
@@ -104,7 +104,7 @@ div.latest-tweet p{
   padding:6px;
   font: 0.7em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   color: #fff;
-  background-color: #999;
+  background-color: #333;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
