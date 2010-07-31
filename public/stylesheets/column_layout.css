@@ -117,3 +117,12 @@ div.latest-tweet span {
   width: 22px;
   background: url(../images/triangle.png) no-repeat;
 }
+
+.ninja {
+  background: url(../images/ninja_running.gif) no-repeat;
+  position:fixed;
+  height: 75px;
+  width:100px;
+  bottom:0;
+  right: 0;
+}
