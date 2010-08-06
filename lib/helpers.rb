@@ -21,12 +21,15 @@ class EightBitRaptor < Sinatra::Base
     end
 
     def get_latest_tweet
-      response = Net::HTTP.get(URI.parse("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=shadowaspect"))
-      stream = JSON.parse(response)
-      stream[0]["text"].gsub!(/\b((https?:\/\/)([A-Za-z0-9\-_=%&@\?\.\/]+))\b/){
-        "<a href=\"#{$1}\">#{$1}</a>"
-      }
-      erb :tweet, :locals => {:tweet => stream[0]}, :layout => false
+      tweet = "Development Mode"
+      if ENV['DOMAIN']
+        response = Net::HTTP.get(URI.parse("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=shadowaspect"))
+        stream = JSON.parse(response)
+        tweet = stream[0]["text"].gsub!(/\b((https?:\/\/)([A-Za-z0-9\-_=%&@\?\.\/]+))\b/){
+          "<a href=\"#{$1}\">#{$1}</a>"
+        }
+      end
+      erb :tweet, :locals => {:tweet => tweet}, :layout => false
     end
   end
 end
