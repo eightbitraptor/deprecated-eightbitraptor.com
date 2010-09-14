@@ -1,0 +1,32 @@
+::title::       Returning from /dev/fort
+::published::   2010-09-14
+::tags::        programming,reevoo,devfort
+
+<me image>
+
+A couple of weeks ago the "Reevoo":http://www.reevoo.com team, along with "James" and "Norm" of "/dev/fort":http://devfort.org and "awesome freelance designed Gavin Carroll" set of to a remote location somewhere in the UK for the second commercial /dev/fort. It was ace.
+
+We spent a tiring and productive week in the farmland of Dorset with no internet connection, no distractions and no management telling us what to do and we built something that we thought would be genuinely useful to Reevoo's users and would hopefully hammer home the message of how awesome we are :)
+
+My experiences of /dev/fort were all positive. We ate loads of nice food (special mention to Norms Toad in the Hole and "George's" fish pie), prepared and cooked by the group, we drank loads of great local beer
+
+<beer image>
+
+and of course, we programmed, a lot.
+
+<hacking image>
+
+a couple of things that working in an environment like /dev/fort really made stand out for me were that a) it's amazing how much you can learn when working undistracted with a group of like minded people and b) even if you think it's not, the internet is a massive distraction.
+
+This was painfully obvious as soon as I got back to work the following week, and returned straight away to keeping my twitter client open and both my gmail accounts open. The first half a day was embarrassing, I'd find myself checking RSS/Twitter/Email about every 10 minutes. And of course the quality of code I wrote was pretty rubbish.
+
+My modus operandi now is basically: <em>Close Everything</em>. I still check my email periodically, and twitter, but not having these things open or a notification icon blinking at you from somewhere on your screen means that when you get in the zone nothing is going to pull you out of it, well except that guy throwing Nerf darts at you periodically but at least you get punch that guy in the face!
+
+We had 6 devs, 3 designers, a usability guy, 2 of Reevoo's category guru's, the /dev/fort guys, no idea what we wanted to build at the beginning of the week and no constraints and after a lot of discussion, some furious deliberation and a lot of hacking we made this:
+
+<screenshot of JFBI>
+
+"http://justbuythebest.com":http://justbuythebest.com
+
+I'm very proud of it and the part I played in it, and am very glad to have been involved in a /dev/fort. so cheers to James and Norm, buy them a beer the next time you see them.
+
