@@ -24,7 +24,7 @@ My modus operandi now is basically: <em>Close Everything</em>. I still check my 
 
 We had 6 devs, 3 designers, a usability guy, 2 of Reevoo's category guru's, "the /dev/fort guys":http://devfort.com/contact-us, no idea what we wanted to build at the beginning of the week and no constraints and after a lot of discussion, some furious deliberation and a lot of hacking we made this:
 
-<a href="http://justbuthisone.com"><img src="images/jfbi.png" /></a>
+<a href="http://justbuthisone.com"><img src="/images/jfbi.png" /></a>
 
 "http://justbuythisone.com":http://justbuythisone.com
 
