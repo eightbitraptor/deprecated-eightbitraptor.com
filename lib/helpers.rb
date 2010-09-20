@@ -25,8 +25,9 @@ class EightBitRaptor < Sinatra::Base
       if ENV['DOMAIN']
         response = Net::HTTP.get(URI.parse("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=shadowaspect"))
         stream = JSON.parse(response)
+        tweet = stream[0]["text"]
       end
-      erb :tweet, :locals => {:tweet => stream[0]["text"]}, :layout => false
+      erb :tweet, :locals => {:tweet => tweet}, :layout => false
     end
   end
 end
