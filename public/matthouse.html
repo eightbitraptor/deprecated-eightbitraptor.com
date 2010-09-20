@@ -8,29 +8,35 @@
       * {
         padding:0px; margin:0px;
       }
-      body{ 
-        font-family: Optima,verdana, sans-serif; font-size: small; 
+      body{
+        font-family: helvetica, sans-serif; font-size: small;
+        width:                    960px;
+        margin:                   0 auto;
+        border-left:              1px solid black;
+        border-right:              1px solid black;
       }
-      p { 
-        margin:2px 2px 5px 30px; 
+      a img{
+        border:                   none;
       }
-      h2,h3,h4{ 
+      p {
+        margin:2px 2px 5px 30px;
+      }
+      h2,h3,h4{
         margin: 10px 2px 10px 5px;
-        display:block; 
-        border-bottom:1px solid #999; 
+        display:block;
       }
       h3{
         margin-left:30px;
       }
-      .linkies{ 
-        float:right; 
+      .linkies{
+        float:right;
         padding:5px 5px;
       }
       .heading {
         padding:5px;
-        display: block; 
-        background-color:#999; 
-        clear:both; 
+        display: block;
+        background-color:#999;
+        clear:both;
         color:#000;
       }
       .bold{
@@ -47,47 +53,51 @@
         margin-bottom:35px;
       }
       #contactable{
-        width:50%;
-        margin:0 0 30px 30px;
+        float:                  right;
+        background:             #fff url('/images/raptor_1_small.gif') 2% 100% no-repeat;
+        width:                  250px;
+        height:                 70px;
+        padding:                4px;
+        margin:                 12px;
+        border:                 1px solid #000;
+        -webkit-border-radius:  12px 0 12px 0;
+        -moz-border-radius:     12px 0 12px 0;
+        text-align:             right;
+        text-decoration:        none;
+        color:                  #444;
+      }
+      #contactable ul {
+        list-style-type:        none;
       }
     </style>
   </head>
   <body>
     <span class="heading">
       <h1>Matt House</h1>
-      <p>A Multi discipline sysadmin with a passion for Ruby ~ A full stack Rails developer</p>
+      <p>A full stack Ruby on Rails Developer</p>
     </span>
-    
+
     <div class="linkies">
       <a href="http://theshadowaspect.com"><img src="http://www.google.com/s2/favicons?domain=theshadowaspect.com" alt="My Blog" /></a>
       <a href="http://twitter.com/shadowaspect"><img src="http://www.google.com/s2/favicons?domain=twitter.com" alt="Twitter" /></a>
       <a href="http://last.fm/users/theshadowaspect"><img src="http://www.google.com/s2/favicons?domain=www.last.fm" alt="Last.fm" /></a>
       <a href="http://github.com/shadowaspect"><img src="http://www.google.com/s2/favicons?domain=github.com" alt="GitHub"/></a>
     </div>
-    
+
     <h2>Who am I?</h2>
-      <p>I am a 26 year old Systems Administrator living in Ashford, Kent. I graduated from the University of Kent with a BEng(Hons) in Computer systems Engineering and a MSc in Broadband and Mobile Communications Networks.</p><p> I've since been working as a multi discipline System Administrator, maintaining and managing BSD, Linux and Windows machines in various roles and environments. I have also worked as a developer writing code for desktop applications and the web. I am passionate about building scalable, efficient architectures for web applications and have an active interest in Operating Systems and programming languages.</p>
+    <a id="contactable" href="/matthouse.vcard">
+      <ul class="hcard">
+        <li class="email" rel="me">matt@eightbitraptor.com</li>
+        <li rel="me">@shadowaspect</li>
+        <li class="url" rel="me">http://eightbitraptor.com</li>
+      </ul>
+    </a>
+      <p>I am a 27 year old Web Developer living in Ashford, Kent. I graduated from the University of Kent with a BEng(Hons) in Computer systems Engineering and a MSc in Broadband and Mobile Communications Networks.</p>
+      <p>I've since been working as both a multi discipline Sysadmin and a Web Developer, both roles focusing primarily on the Ruby on Rails stack. I am passionate about building scalable, efficient architectures for web applications and have an active interest in Operating Systems and programming languages.
       <p>I love automation and systems configuration especially using Ruby based tools like Puppet and Chef. And I take pride in writing, deploying and maintaining web applications (specifically Ruby/Rails) using bleeding edge technologies throughout their life cycle</p>
-      <table id="contactable" class="hcard">
-        <tr>
-          <td><strong>E-Mail</strong></td>
-          <td class="email" rel="me">matt@eightbitraptor.com</td>
-        </tr>
-        <tr>
-          <td><strong>Twitter</strong></td>
-          <td rel="me">@shadowaspect</td>
-        </tr>
-        <tr>
-          <td><strong>Web</strong></td>
-          <td class="url" rel="me">http://eightbitraptor.com</td>
-        </tr>
-      </table>
     <h2>Skills and Experience</h2>
-      <p><span class="bold">Operating Systems:</span> Linux, particularly RedHat Enterprise, Ubuntu, Debian, ArchLinux and Slackware. Mac OS X 10.4+, Windows XP, Vista and 7</p>
-      <p><span class="bold">Programming Languages & Frameworks:</span> Ruby (and Rails), Bash, Java, C# (.NET), Perl, Python, C</p>
-      <p class="spaceafter"><span class="bold">Software & Tools:</span> Xen Virtualisation, Puppet, Capistrano, Apache, Nginx, Passenger, Mongrel, Vim, Git, rack, rubygems, monit, cacti, nagios, munin, subversion </p>
         <h3>Developer, Reevoo.com, April 2010 - present</h3>
-        <p>I make things, with code, mostly they live on the rails</p>
+        <p>I make things, with code, mostly they live on the rails, occasionally they don't. As a general rule they're all well tested using test/unit with shoulda and sometimes cucumber.</p>
         <h3>Systems Administrator, Reevoo.com, August 2008 - April 2010</h3>
         <p>Reevoo.com is a later stage start up based in South London. I work here as one of two Systems Administration staff. I have a wide variety of responsibilities including the maintenance and deployment of Reevoo.com and it's supporting stack through several environments (local dev and qa, staging and production in a remote data center), application and server monitoring, data management and backup and the commissioning of new machines. I also provide desktop support and maintenance to the company desktops and laptops for about 30 employees, these range from Windows machines for business users (both Windows XP and Windows 7) to Mac's for the development staff. And internal development servers running RHEL 5</p>
         <p>This position gives me day to day working knowledge of Apache, MySQL, Mongrel, Passenger, Ruby (and Rails), Nginx, Puppet, Capistrano as well as more standard sysadmin tools and practices such as RedHat Linux administration, Mac OSX and Windows Administrator, bash scripting, server monitoring strategies and network configuration and administration amongst others</p>
@@ -109,7 +119,7 @@
     <p>For fun I pick apart Linux, and enjoy testing different distributions. My current distro of choice is ArchLinux, although I'll always have a soft spot for Slackware. I enjoy programming and learning languages (I love Ruby and currently I'm starting to learn some functional programming). Some of my open source code can be seen on <a href="http://github.com/shadowaspect">my GitHub account</a>.</p>
     <p>I am a keen musician and play both Bass and Guitar, I am currently involved in a collaborative music project writing music over the internet using Git and Audacity. I have previously been involved in several bands, playing gigs and writing music. I listen to a lot of music and try to attend as many gigs as I can.</p>
     <p>I enjoy collecting video games (mostly retro), reading, and learning about new cool things</p>
-    
+
     <h1 class="footer">References can be supplied on request</h1>
   </body>
 </html>
