@@ -26,7 +26,7 @@ h2 {
 .left-column {
   position: fixed;
   top: 15px; left: 0; bottom:0;
-  width:25%;
+  width:20%;
   background: #fff url(../images/raptor_1.gif) no-repeat bottom left;
 }
 
@@ -39,24 +39,32 @@ h2 {
 .left-column ul li {
   padding: 6px;
 }
+
+ul.profile-links {
+  margin-top:             300px;
+}
 li.github{ list-style: none inside url(../images/github.gif); }
 li.lastfm{ list-style: none inside url(../images/lastfm.gif); }
 li.twitter{ list-style: none inside url(../images/twitter.gif); }
 li.anidb{ list-style: none inside url(../images/anidb.gif); }
 
-.site-heading {
-  background: #fff url(../images/site-header2.png) no-repeat top right ;
-  height: 600px;
-  width:90px;
-  margin: 0;
-
-  text-indent: -88888em;
-  float:right;
+.right-column {
+  margin-left:20%;
+  width:50%;
 }
 
-.right-column {
-  margin-left:27%;
-  width:50%;
+#site-heading {
+  font-family:            Raleway;
+  text-transform:         upper;
+  font-weight:            normal;
+  letter-spacing:         0.25em;
+  font-size:              2.4em;
+  width:                  100%;
+  padding-bottom:                3px;
+  border-bottom:          1px solid black
+}
+#site-heading span {
+  font-family:            Georgia;
 }
 
 .tags {
