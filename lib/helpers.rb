@@ -25,11 +25,8 @@ class EightBitRaptor < Sinatra::Base
       if ENV['DOMAIN']
         response = Net::HTTP.get(URI.parse("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=shadowaspect"))
         stream = JSON.parse(response)
-        tweet = stream[0]["text"].gsub!(/\b((https?:\/\/)([A-Za-z0-9\-_=%&@\?\.\/]+))\b/){
-          "<a href=\"#{$1}\">#{$1}</a>"
-        }
       end
-      erb :tweet, :locals => {:tweet => tweet}, :layout => false
+      erb :tweet, :locals => {:tweet => stream[0]["text"]}, :layout => false
     end
   end
 end

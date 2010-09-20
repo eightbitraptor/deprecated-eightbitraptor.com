@@ -4,7 +4,7 @@
 
 <a href="http://www.flickr.com/photos/mn_francis/4976563952/" title="Untitled by cackhanded, on Flickr"><img src="http://farm5.static.flickr.com/4150/4976563952_fa3fccbd15.jpg" width="500" height="333" alt="" /></a>
 
-A couple of weeks ago the "Reevoo":http://www.reevoo.com team, along with "James":http://tartarus.org/james/ and "Norm":http://marknormanfrancis.com/ of "/dev/fort":http://devfort.com and "awesome freelance designed Gavin O'Carroll":http://www.digitalhealthservice.com/ set of to a remote location somewhere in the UK for the second commercial /dev/fort. It was ace.
+A couple of weeks ago the "Reevoo":http://www.reevoo.com team, along with "James":http://tartarus.org/james/ and "Norm":http://marknormanfrancis.com/ of "/dev/fort":http://devfort.com and "super awesome creative guy Gavin O'Carroll":http://www.digitalhealthservice.com/people set of to a remote location somewhere in the UK for the second commercial /dev/fort. It was ace.
 
 We spent a tiring and productive week in the farmland of Dorset with no internet connection, no distractions and no management telling us what to do and we built something that we thought would be genuinely useful to Reevoo's users and would hopefully hammer home the message of how awesome we are :)
 
@@ -24,7 +24,7 @@ My modus operandi now is basically: <em>Close Everything</em>. I still check my 
 
 We had 6 devs, 3 designers, a usability guy, 2 of Reevoo's category guru's, "the /dev/fort guys":http://devfort.com/contact-us, no idea what we wanted to build at the beginning of the week and no constraints and after a lot of discussion, some furious deliberation and a lot of hacking we made this:
 
-<a href="http://justbuthisone.com"><img src="/images/jfbi.png" /></a>
+<a href="http://justbuythisone.com/best-toaster"><img src="/images/jfbi.png" /></a>
 
 "http://justbuythisone.com":http://justbuythisone.com
 
