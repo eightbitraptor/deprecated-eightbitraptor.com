@@ -1,5 +1,5 @@
 #\ -p 8765
-require "rubygems"
+require 'bundler/setup'
 require 'lib/eightbitraptor'
 #require 'rack-force_domain'
 

@@ -1,5 +1,5 @@
 require 'date'
-require 'RedCloth'
+require 'rdiscount'
 
 class EightBitRaptor < Sinatra::Base
   helpers do
@@ -9,7 +9,7 @@ class EightBitRaptor < Sinatra::Base
     end
 
     def to_html(content)
-      RedCloth.new(content).to_html
+      RDiscount.new(content).to_html
     end
 
     def pretty_date(date_in)
@@ -20,14 +20,5 @@ class EightBitRaptor < Sinatra::Base
       "http://eightbitraptor.com/posts/#{post.printable_pathname}"
     end
 
-    def get_latest_tweet
-      tweet = "Development Mode"
-      if ENV['DOMAIN']
-        response = Net::HTTP.get(URI.parse("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=shadowaspect"))
-        stream = JSON.parse(response)
-        tweet = stream[0]["text"]
-      end
-      erb :tweet, :locals => {:tweet => tweet}, :layout => false
-    end
   end
 end

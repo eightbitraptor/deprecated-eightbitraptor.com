@@ -10,7 +10,7 @@ First of all I removed all unnecesary packages using a combination of apt-get an
 
 The next step is to install ruby, rubygems and a few useful dependancies. This is covered in detail elsewhere on the web so I'll be brief, basically just:
 
-<pre class="brush: bash">
+<pre>
 sudo apt-get install ruby1.8 irb1.8 rdoc1.8 ri1.8 \
              readline build-essential libopenssl-ruby1.8
 sudo ln -s /usr/bin/ruby /usr/bin/ruby1.8 #repeat for irb,ri and rdoc
@@ -21,24 +21,24 @@ sudo ruby setup.rb
 
 If you'd like a nice deb package that you can track with apt, you can replace the last step with:
 
-<pre class="brush: bash">
+<pre>
 sudo apt-get install checkinstall
 checkinstall 'sudo ruby setup.rb'
 </pre>
 
-"Checkinstall is an awesome piece of software":http://checkinstall.izto.org/, it's so awesome it deserves it's own post so I'll skip over the details, check it out. 
+[Checkinstall is an awesome piece of software](http://checkinstall.izto.org/), it's so awesome it deserves it's own post so I'll skip over the details, check it out. 
 
 After setting up this step you should now have a fully functioning rubygems installation, test it by issuing gem -v
- 
+
 Next step is to get mysql installed and configured. I did this using apt-get, because it's easy:
 
-<pre class="brush: bash">
+<pre>
 sudo apt-get install mysql-server mysql-client libmysql-dev
 </pre>
 
 Be aware that you need the mysql development headers in order to compile the mysql gem, which we will install next, alongside adding Github to our gems sources, installing rails and a bunch of other useful stuff.
 
-<pre class="brush: bash">
+<pre>
 sudo gem sources -a http://gems.github.com
 sudo gem install rails mysql sqlite3-ruby capistrano hoe hpricot webby RedCloth rake
 </pre>

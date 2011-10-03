@@ -34,11 +34,11 @@ p [1,1,2,3,2,4,5,3,3,3,1,1,2,6,5,5,5,5].inject(Hash.new(0)){ |memo,i| memo.merge
 
 So how is this working?
 
-The first thing we need to look at is **Enumerable#inject**. This takes an argument and a block. Inject then calls the block once for every element in the Collection we are calling it for, in this case this is our array of values. The argument we give to the inject function will be yielded as the first argument to the block (memo), the second argument in the block(i) is the value in our collection we are working on.
+The first thing we need to look at is `Enumerable#inject`. This takes an argument and a block. Inject then calls the block once for every element in the Collection we are calling it for, in this case this is our array of values. The argument we give to the inject function will be yielded as the first argument to the block (memo), the second argument in the block(i) is the value in our collection we are working on.
 
 An important thing to note with inject is that the return value of the block is passed into the block on the subsequent call, replacing the old value of our first block argument (memo in this case).
 
-This lets us do something funky inside the block using the **Hash#merge** function. merge takes a hash as an argument and merges it's values into the hash that it's called on. A couple of examples to illustrate this (in irb):
+This lets us do something funky inside the block using the `Hash#merge` function. merge takes a hash as an argument and merges it's values into the hash that it's called on. A couple of examples to illustrate this (in irb):
 
 <pre class="brush: ruby">
 irb(main):007:0> {"first" => 2}.merge({"second" => 2})

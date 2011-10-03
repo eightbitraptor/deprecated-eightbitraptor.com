@@ -10,7 +10,7 @@ And that's where Puppet comes in :)
 
 h4. What is Puppet
 
-"Puppet is a configuration management framework":http://reductivelabs.com/products/puppet/. It's kind of a logical step forward from "Cfengine":http://www.cfengine.org. It is written in Ruby, by Luke Kanies of Reductive Labs and basically consists of 3 things:
+[Puppet is a configuration management framework](http://reductivelabs.com/products/puppet/). It's kind of a logical step forward from [Cfengine](http://www.cfengine.org). It is written in Ruby, by Luke Kanies of Reductive Labs and basically consists of 3 things:
 
 * A domain specific language, for declaring configurations
 * A client and server application for distributing your configurations, and
@@ -26,7 +26,7 @@ There are a couple of alternatives to Puppet. Cfengine, which Puppet is meant to
 
 The other main alternative is Chef. Chef is also written in Ruby and is definitely worth keeping an eye on. It tries to alleviate some of the main issues in Puppet, mainly that instead of a custom DSL the recipes are written in Ruby, which lets you do something like this:
 
-<pre class="brush: ruby">
+<pre>
 node[:gems].each do |gem|
   gem_package gem[:name] do
     version gem[:version]
@@ -56,7 +56,7 @@ I disagree with this because Rubygems, like CPAN or Python Eggs, is a very speci
 
 So lets install ruby, clone the Puppet repository, install Rubygems and then install Puppet.
 
-<pre class="brush: bash">
+<pre>
 sudo apt-get install ruby git-core
 cd /etc/ && git clone git://github.com/shadowaspect/puppet.git
 sudo dpkg -i /etc/puppet/files/deb/rubygems1.8-1.3.5_i386.deb
@@ -65,24 +65,24 @@ sudo gem install puppet
 
 Now we need to look at starting the server with the correct certificate name, my recipes assume that your puppetmaster host is called puppet, so make sure that it is configured in your hosts file and start up the puppetmaster with:
 
-<pre class="brush: bash">
+<pre>
 sudo puppetmasterd --certname puppet
 </pre>
 
 So now we have a repository of Puppet recipes and our puppetmaster running you can run puppet on the machine with
 
-<pre class="brush: bash">
+<pre>
 sudo puppetd --test --verbose
 </pre>
 
 This will fail the first time due to an invalid client certificate, to rectify this you need to have the puppetmaster sign the client cert, you can do this by running (on the master)
 
-<pre class="brush: bash">
+<pre>
 sudo puppetca -l # for a list of unsigned certs
 sudo puppetca -s <certname> # from the above list
 </pre>
 
-h4. Writing Recipes
+<h4>Writing Recipes</h4>
 
 Puppet pulls it's configuration from the files located in /etc/puppet. It basically assumes a couple of things:
 
@@ -91,7 +91,7 @@ Puppet pulls it's configuration from the files located in /etc/puppet. It basica
 
 Puppet has several useful constructs available for writing recipes, stuff like classes and basic inheritance, and also defines for creating your own custom functions, you can see examples of this by checking out my github repository, but a basic node definition would look like this:
 
-<pre class="brush: bash">
+<pre>
 node mattsmachine{
   package{ "apt":
     ensure => installed,
@@ -106,7 +106,7 @@ node mattsmachine{
 
 This noddy little example just makes sure that apt is installed and that the sources.list is present on the machine. You can do so much more awesome stuff than this, for which I advise you to check out the excellent tutorials on the Puppet site, and have a browse around my custom Puppet repository. <a class="github-project ruby" href="http://github.com/eightbitraptor/puppet/tree/master"><span>Get the source</span></a>
 
-h4. Where next?
+<h4>Where next?</h4>
 
 Obviously the initial install of Puppet (installing Ruby and Git by hand, compiling rubygems etc) can be pretty time consuming in itself. At work we use RedHat, and so we have created a custom kickstart file that completely automates the process of installing the operating system and performing the first puppet run. All you have to do is boot the machine from the network, point the installer at the kickstart file and go and grab a coffee while it installs the OS (from a network share), configures the network, installs ruby and puppet, locates the puppetmaster and runs puppet to install the rest of the system depending on the role it's destined to perform.
 

@@ -6,7 +6,7 @@ So I was reading "the Design Monkey blog":http://designmonkey.blogspot.com this 
 
 Hell No.
 
-The design monkey provides that most awesome of things (as I'm sure do many others), an RSS feed of his eloquent prose, so not to be outdone and armed with the best of tools, I set out creating one with Ruby, "builder":http://builder.rubyforge.org/ and "Sinatra":http://www.sinatrarb.com/
+The design monkey provides that most awesome of things (as I'm sure do many others), an RSS feed of his eloquent prose, so not to be outdone and armed with the best of tools, I set out creating one with Ruby, [builder](http://builder.rubyforge.org/) and [Sinatra](http://www.sinatrarb.com/)
 
 This turned out to take about 10 minutes and be amazingly less impressive than it sounds but here goes anyway. First you should create a builder template for your RSS feed. Mine looks like this: 
 

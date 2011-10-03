@@ -6,21 +6,21 @@ class Post
   class << self
 
     def all
-      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.textile})].map{ |path| new(path) }.sort!
+      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.md})].map{ |path| new(path) }.sort!
     end
 
     def find(name)
-      Dir[File.join(File.dirname(__FILE__), %W{.. posts #{name}.textile})].map{|post| new(post) }.first
+      Dir[File.join(File.dirname(__FILE__), %W{.. posts #{name}.md})].map{|post| new(post) }.first
     end
 
     def find_by_category(category)
-      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.textile})].map{ |post| new(post) }.select{ |p|
+      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.md})].map{ |post| new(post) }.select{ |p|
         p.tags.include? category
       }.sort!
     end
 
     def most_recent(quant=1)
-      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.textile})].map{ |post| new(post) }.sort!.take(quant)
+      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.md})].map{ |post| new(post) }.sort!.take(quant)
     end
   end
 

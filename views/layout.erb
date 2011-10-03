@@ -2,19 +2,6 @@
 <html>
   <head>
     <%= partial :head %>
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-6643959-2']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
     <meta name="google-site-verification" content="lfNSP3udvmlfAWIXoRoxo5Utqc6ikA8tUqUBzOmzCrM" />
   </head>
   <body>
@@ -30,18 +17,11 @@
         <li class="github"><a rel="me" href="http://github.com/eightbitraptor">github</a></li>
         <li class="anidb"><a rel="me" href="http://anidb.net/perl-bin/animedb.pl?show=userpage&uid=428521">anidb</a></li>
       </ul>
-      <%= get_latest_tweet %>
     </div>
     <div class="right-column">
       <h1 id="site-heading">eightbitraptor.com <span>Rawr.</span></h1>
       <%= yield %>
       <span class="ninja"></span>
     </div>
-    <script type="text/javascript" charset="utf-8">
-      SyntaxHighlighter.defaults['toolbar'] = false;
-      SyntaxHighlighter.all();
-
-      Eightbitraptor.init(jQuery);
-    </script>
   </body>
 </html>
