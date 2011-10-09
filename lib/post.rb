@@ -42,7 +42,7 @@ class Post
       instance_variable_set("@#{option[0]}", payload )
       self.class.send(:attr_accessor, "#{option[0]}")
     end
-    instance_variable_set("@body", body.to_s)
+    instance_variable_set("@body", body.join)
     self.class.send(:attr_accessor, "body")
   end
 
