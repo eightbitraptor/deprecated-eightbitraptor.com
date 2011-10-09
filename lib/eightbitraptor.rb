@@ -26,8 +26,8 @@ class EightBitRaptor < Sinatra::Base
     erb :post, :locals => {:post => post}
   end
 
-  get '/categories/:category' do |category|
-    erb :categories, :locals => { :posts => Post.find_by_category(category)}
+  get '/tags/:tag' do |tag|
+    erb :categories, :locals => { :posts => Post.find_by_tag(tag)}
   end
 
   get '/admin' do

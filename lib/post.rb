@@ -13,7 +13,7 @@ class Post
       Dir[File.join(File.dirname(__FILE__), %W{.. posts #{name}.md})].map{|post| new(post) }.first
     end
 
-    def find_by_category(category)
+    def find_by_tag(category)
       Dir[File.join(File.dirname(__FILE__), %w{.. posts *.md})].map{ |post| new(post) }.select{ |p|
         p.tags.include? category
       }.sort!
