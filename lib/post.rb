@@ -30,13 +30,13 @@ class Post
     options[:printable_pathname] = Pathname.new(path).basename.to_s.split('.')[0]
     body = []
     lines.each do |l|
-      if l.match /^::([^fold].*)::(.*)$/
+      if l.match /^::(.*)::(.*)$/
         options[$1.to_sym] = $2.strip
       else
         body << l
       end
     end
-    options[:slug] = body.to_s.split(/::fold::/)[0]
+
     options.map do |option|
       payload = ( option[0] == :tags ) ? option[1].split(',') : option[1]
       instance_variable_set("@#{option[0]}", payload )
