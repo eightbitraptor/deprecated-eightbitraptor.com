@@ -1,49 +1,51 @@
 require 'pathname'
-require 'pp'
 
 class Post
 
   class << self
 
     def all
-      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.md})].map{ |path| new(path) }.sort!
+      Dir[File.expand_path('../../posts/*.md', __FILE__)].map{ |post| new(post) }.sort!
     end
 
     def find(name)
-      Dir[File.join(File.dirname(__FILE__), %W{.. posts #{name}.md})].map{|post| new(post) }.first
+      Dir[File.expand_path("../../posts/#{name}.md", __FILE__)].map{ |post| new(post) }.first
     end
 
     def find_by_tag(category)
-      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.md})].map{ |post| new(post) }.select{ |p|
+      Post.all.select{ |p|
         p.tags.include? category
       }.sort!
     end
 
     def most_recent(quant=1)
-      Dir[File.join(File.dirname(__FILE__), %w{.. posts *.md})].map{ |post| new(post) }.sort!.take(quant)
+      Post.all.sort!.take(quant)
     end
   end
 
   def initialize(path)
     lines = File.open(path)
-    options = {}
-    options[:printable_pathname] = Pathname.new(path).basename.to_s.split('.')[0]
-    body = []
-    lines.each do |l|
+
+    body = lines.map do |l|
       if l.match /^::(.*)::(.*)$/
-        options[$1.to_sym] = $2.strip
+        instance_variable_set("@#{$1}", $2.strip )
+        self.class.send(:attr_accessor, "#{$1}")
+        nil
       else
-        body << l
+        l
       end
+    end.compact!
+
+    @tags = @tags.split(',')
+
+    {
+      "printable_pathname" => Pathname.new(path).basename.to_s.split('.').first,
+      "body" => body.join
+    }.each do |k,v|
+      instance_variable_set("@#{k}", v)
+      self.class.send(:attr_accessor, k)
     end
 
-    options.map do |option|
-      payload = ( option[0] == :tags ) ? option[1].split(',') : option[1]
-      instance_variable_set("@#{option[0]}", payload )
-      self.class.send(:attr_accessor, "#{option[0]}")
-    end
-    instance_variable_set("@body", body.join)
-    self.class.send(:attr_accessor, "body")
   end
 
   def <=>(other)
