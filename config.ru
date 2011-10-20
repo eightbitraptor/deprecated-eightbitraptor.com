@@ -1,6 +1,6 @@
 #\ -p 8765
 require 'bundler/setup'
-require 'lib/eightbitraptor'
+require File.expand_path('../lib/eightbitraptor.rb', __FILE__)
 #require 'rack-force_domain'
 
 #use Rack::ForceDomain, ENV["DOMAIN"]

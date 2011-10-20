@@ -45,7 +45,6 @@ class Post
       instance_variable_set("@#{k}", v)
       self.class.send(:attr_accessor, k)
     end
-
   end
 
   def <=>(other)
