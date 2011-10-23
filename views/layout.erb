@@ -2,16 +2,17 @@
 <html>
   <head>
     <%= partial :head %>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
     <meta name="google-site-verification" content="lfNSP3udvmlfAWIXoRoxo5Utqc6ikA8tUqUBzOmzCrM" />
   </head>
   <body>
+    <h1 id="site-heading">eightbitraptor.com <span>Rawr.</span></h1>
     <div class="container">
-      <div class="column">
-        <h1 id="site-heading">eightbitraptor.com <span>Rawr.</span></h1>
+      <div class="column main">
         <%= yield %>
       </div>
 
-      <div class="column">
+      <div class="column sidebar">
         <ul class="navigation">
           <li><a href="/posts">Blog</a></li>
           <li><a href="/matthouse.html">About</a></li>

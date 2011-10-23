@@ -1,0 +1,59 @@
+body {
+    font-family: Helvetica, sans-serif;
+    color: #bbb;
+    background: #000 url('/images/bg.jpg') repeat-x;
+    font-size: 14px;
+    line-height: 1.8em;
+    margin: 0;
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+}
+
+a:visited,
+a:active,
+a:focus,
+a:hover {
+  color: #555;
+}
+#site-heading {
+  font-family: 'Quicksand', Helvetica, sans-serif;
+  font-size: 2.5em;
+  color: #fff;
+  width: 940px;
+  margin: auto;
+  padding: 50px 10px 20px;
+  -webkit-border-radius: 12px;
+  text-shadow: 1px 1px 15px rgba(255,255,255,1);
+}
+#site-heading span {
+  font-family: Georgia;
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.column {
+  float: left;
+}
+
+.main {
+  width: 690px;
+  padding: 0 10px;
+  margin-right: 20px;
+}
+.post {
+  margin-top: 30px;
+
+}
+
+.sidebar {
+  width: 220px;
+}
