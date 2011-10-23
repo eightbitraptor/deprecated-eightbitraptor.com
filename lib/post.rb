@@ -5,11 +5,15 @@ class Post
   class << self
 
     def all
-      Dir[File.expand_path('../../posts/*.md', __FILE__)].map{ |post| new(post) }.sort!
+      Dir[File.expand_path('../../posts/*.md', __FILE__)].map{ |post|
+        new(post)
+      }.sort!
     end
 
     def find(name)
-      Dir[File.expand_path("../../posts/#{name}.md", __FILE__)].map{ |post| new(post) }.first
+      Dir[File.expand_path("../../posts/#{name}.md", __FILE__)].map{ |post|
+        new(post)
+      }.first
     end
 
     def find_by_tag(category)
@@ -28,7 +32,7 @@ class Post
 
     body = lines.map do |l|
       if l.match /^::(.*)::(.*)$/
-        v = ($1 == 'published') ? Date.parse($2) : $2 
+        v = ($1 == 'published') ? Date.parse($2) : $2
         instance_variable_set("@#{$1}", $2.strip )
         self.class.send(:attr_accessor, "#{$1}")
         nil
