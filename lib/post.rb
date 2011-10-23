@@ -28,6 +28,7 @@ class Post
 
     body = lines.map do |l|
       if l.match /^::(.*)::(.*)$/
+        v = ($1 == 'published') ? Date.parse($2) : $2 
         instance_variable_set("@#{$1}", $2.strip )
         self.class.send(:attr_accessor, "#{$1}")
         nil
