@@ -52,15 +52,25 @@ img {
 .column {
   float: left;
 }
-
 .main {
   width: 690px;
   padding: 0 10px;
   margin-right: 20px;
 }
 .post {
-  margin-top: 30px;
-
+  padding-top: 30px;
+}
+.tags {
+  font-style: italic;
+  color: #999;
+}
+.divider {
+  display: block;
+  height: 1px;
+  width: 540px;
+  margin: 0 auto;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 8px rgba(255,255,255,1);
 }
 
 .sidebar {
