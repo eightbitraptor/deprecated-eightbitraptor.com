@@ -15,7 +15,7 @@ class EightBitRaptor < Sinatra::Base
   enable :static
 
   get '/' do
-    erb :index, :locals => {:posts => Post.most_recent(3)}
+    erb :index, :locals => {:posts => Post.most_recent(1)}
   end
 
   get '/posts' do
