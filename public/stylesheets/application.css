@@ -1,6 +1,6 @@
 body {
     font-family: Helvetica, sans-serif;
-    color: #bbb;
+    color: #dde;
     background: #000 url('/images/bg.jpg') repeat-x;
     font-size: 14px;
     line-height: 1.8em;
@@ -27,21 +27,28 @@ img {
      -moz-box-shadow: 0 0 12px rgba(100,100,100,0.5);
           box-shadow: 0 0 12px rgba(100,100,100,0.5);
 }
+h2 {
+  padding: 10px 0;
+}
+
 #site-heading {
   font-family: 'Quicksand', Helvetica, sans-serif;
   font-size: 2.5em;
   color: #fff;
   width: 940px;
   margin: auto;
-  padding: 50px 10px 20px;
+  padding: 70px 10px 20px;
   -webkit-border-radius: 12px;
-  text-shadow: 1px 1px 15px rgba(255,255,255,1);
+     -moz-border-radius: 12px;
+          border-radius: 12px;
+  text-shadow: 1px 1px 8px rgba(255,255,255,1);
 }
 #site-heading span {
   font-family: Georgia;
   font-style: italic;
   font-size: 14px;
   color: #999;
+  text-shadow: 1px 1px 15px rgba(255,255,255,0.3);
 }
 
 .container {
@@ -75,4 +82,12 @@ img {
 
 .sidebar {
   width: 220px;
+  color: #666;
+}
+.about {
+  padding-top: 93px;
+}
+.about img {
+  float: left;
+  margin: 20px 10px 0px 0px;
 }
