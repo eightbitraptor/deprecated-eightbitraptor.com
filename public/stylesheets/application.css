@@ -1,7 +1,7 @@
 body {
     font-family: Helvetica, sans-serif;
-    color: #dde;
-    background: #000 url('/images/bg.jpg') repeat-x;
+    color: #222; 
+    background: #fff url('/images/header_2.jpg') repeat-x;
     font-size: 14px;
     line-height: 1.8em;
     margin: 0;
@@ -37,10 +37,7 @@ h2 {
   color: #fff;
   width: 940px;
   margin: auto;
-  padding: 70px 10px 20px;
-  -webkit-border-radius: 12px;
-     -moz-border-radius: 12px;
-          border-radius: 12px;
+  padding: 40px 10px 28px;
   text-shadow: 1px 1px 8px rgba(255,255,255,1);
 }
 #site-heading span {
@@ -65,7 +62,7 @@ h2 {
   margin-right: 20px;
 }
 .post {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .tags {
   font-style: italic;
@@ -85,7 +82,7 @@ h2 {
   color: #666;
 }
 .about {
-  padding-top: 93px;
+  padding-top: 73px;
 }
 .about img {
   float: left;
