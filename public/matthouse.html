@@ -5,28 +5,33 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Matt House</title>
     <style>
+
+      /* DONT JUDGE ME, I'm tired and I hacked this CSS together in about 15 minutes */
+
       * {
         padding:0px; margin:0px;
       }
       body{
-        font-family: helvetica, sans-serif; font-size: small;
-        width:                    960px;
+        font-family: Arial, helvetica, sans-serif; font-size: small;
+        width:                    900px;
         margin:                   0 auto;
+        padding:                  0 20px;
         border-left:              1px solid black;
-        border-right:              1px solid black;
+        border-right:             1px solid black;
       }
       a img{
         border:                   none;
       }
       p {
-        margin:2px 2px 5px 30px;
+        margin:2px 2px 5px 20px;
+        line-height:        1.35em;
       }
       h2,h3,h4{
         margin: 10px 2px 10px 5px;
         display:block;
       }
       h3{
-        margin-left:30px;
+        margin-left:20px;
       }
       .linkies{
         float:right;
@@ -35,28 +40,39 @@
       .heading {
         padding:5px;
         display: block;
+        position:relative;
+        width:930px;
+        top:0;
+        left:-20px;
         background-color:#999;
         clear:both;
         color:#000;
       }
+      .heading h1 {
+        padding-left:       20px;
+      }
+      .heading p {
+        padding-left:       15px;
+      }
       .bold{
         font-weight:bold;
       }
-      h1.footer{
-        color:#777;
-        display:inline-block;
-        width:100%;
-        text-align:center;
-        margin:30px;
+      span.footer{
+        color:                  #999;
+        display:                inline-block;
+        width:                  100%;
+        text-align:             center;
+        margin:                 30px 0;
+        font-size:              18px;
       }
       .spaceafter{
-        margin-bottom:35px;
+        margin-bottom:          20px;
       }
       #contactable{
         float:                  right;
         background:             #fff url('/images/raptor_1_small.gif') 2% 100% no-repeat;
-        width:                  250px;
-        height:                 70px;
+        width:                  270px;
+        height:                 100px;
         padding:                4px;
         margin:                 12px;
         border:                 1px solid #000;
@@ -64,62 +80,101 @@
         -moz-border-radius:     12px 0 12px 0;
         text-align:             right;
         text-decoration:        none;
-        color:                  #444;
+        color:                  #333;
       }
-      #contactable ul {
+      #contactable a {
+        color:                  #333;
+      }
+      ul {
         list-style-type:        none;
+      }
+      .skill-summary h3 {
+        display:                inline;
+      }
+      a {
+        text-decoration:        none;
+      }
+      .fn {
+        margin-bottom:          5px;
       }
     </style>
   </head>
   <body>
     <span class="heading">
       <h1>Matt House</h1>
-      <p>A full stack Ruby on Rails Developer</p>
+      <p>Full Stack Ruby on Rails Developer</p>
     </span>
 
     <div class="linkies">
-      <a href="http://theshadowaspect.com"><img src="http://www.google.com/s2/favicons?domain=theshadowaspect.com" alt="My Blog" /></a>
-      <a href="http://twitter.com/shadowaspect"><img src="http://www.google.com/s2/favicons?domain=twitter.com" alt="Twitter" /></a>
-      <a href="http://last.fm/users/theshadowaspect"><img src="http://www.google.com/s2/favicons?domain=www.last.fm" alt="Last.fm" /></a>
-      <a href="http://github.com/shadowaspect"><img src="http://www.google.com/s2/favicons?domain=github.com" alt="GitHub"/></a>
+      <a href="http://eightbitraptor.com"><img src="http://www.google.com/s2/favicons?domain=eightbitraptor.com" alt="My Blog" /></a>
+      <a href="http://twitter.com/eightbitraptor"><img src="http://www.google.com/s2/favicons?domain=twitter.com" alt="Twitter" /></a>
+      <a href="http://last.fm/user/theshadowaspect"><img src="http://www.google.com/s2/favicons?domain=www.last.fm" alt="Last.fm" /></a>
+      <a href="http://github.com/eightbitraptor"><img src="http://www.google.com/s2/favicons?domain=github.com" alt="GitHub"/></a>
+      <a href="https://rubygems.org/profiles/1420"><img src="http://t0.gstatic.com/images?q=tbn:ANd9GcTM4Z7vxmRFnhBO2ztbTbJnb5V86Vj7zCMCT0YuCviyO0MJfdeR" alt="Rubygems" /></a>
     </div>
 
     <h2>Who am I?</h2>
-    <a id="contactable" href="/matthouse.vcard">
-      <ul class="hcard">
+    <div id="contactable">
+      <ul class="vcard">
+        <li class="fn"><strong>Matt House</strong></li>
+        <li rel="me">@eightbitraptor</li>
+        <li class-"tel">+44 (0)7581 356 719</li>
         <li class="email" rel="me">matt@eightbitraptor.com</li>
-        <li rel="me">@shadowaspect</li>
-        <li class="url" rel="me">http://eightbitraptor.com</li>
+        <li class="url" rel="me"><a href="http://eightbitraptor.com">http://eightbitraptor.com</a></li>
+        <li><a href="http://github.com/eightbitraptor">http://github.com/eightbitraptor</a></li>
       </ul>
-    </a>
-      <p>I am a 27 year old Web Developer living in Ashford, Kent. I graduated from the University of Kent with a BEng(Hons) in Computer systems Engineering and a MSc in Broadband and Mobile Communications Networks.</p>
-      <p>I've since been working as both a multi discipline Sysadmin and a Web Developer, both roles focusing primarily on the Ruby on Rails stack. I am passionate about building scalable, efficient architectures for web applications and have an active interest in Operating Systems and programming languages.
-      <p>I love automation and systems configuration especially using Ruby based tools like Puppet and Chef. And I take pride in writing, deploying and maintaining web applications (specifically Ruby/Rails) using bleeding edge technologies throughout their life cycle</p>
-    <h2>Skills and Experience</h2>
-        <h3>Developer, Reevoo.com, April 2010 - present</h3>
-        <p>I make things, with code, mostly they live on the rails, occasionally they don't. As a general rule they're all well tested using test/unit with shoulda and sometimes cucumber.</p>
-        <h3>Systems Administrator, Reevoo.com, August 2008 - April 2010</h3>
-        <p>Reevoo.com is a later stage start up based in South London. I work here as one of two Systems Administration staff. I have a wide variety of responsibilities including the maintenance and deployment of Reevoo.com and it's supporting stack through several environments (local dev and qa, staging and production in a remote data center), application and server monitoring, data management and backup and the commissioning of new machines. I also provide desktop support and maintenance to the company desktops and laptops for about 30 employees, these range from Windows machines for business users (both Windows XP and Windows 7) to Mac's for the development staff. And internal development servers running RHEL 5</p>
-        <p>This position gives me day to day working knowledge of Apache, MySQL, Mongrel, Passenger, Ruby (and Rails), Nginx, Puppet, Capistrano as well as more standard sysadmin tools and practices such as RedHat Linux administration, Mac OSX and Windows Administrator, bash scripting, server monitoring strategies and network configuration and administration amongst others</p>
-        <h3>Research Student, University of Kent, September 2007-August 2008</h3>
-        <p>I spent a year as part of a research group in the Computer Science department working on an industry sponsored project into pattern matching with respect to Network Intrusion Detection. This involved designing a pattern matching machine in hardware using FPGA's and the software to be able to program and control the matcher.</p>
-        <p>During this position I gained experience in Java, Hardware Design, FPGA's and programmable architectures, VHDL, Finite Automata, Regular Expression and String pattern matching engines and algorithms.</p>
+    </div>
+      <p>I'm proud to be an agile web developer and sysadmin with over 3 years experience working in London and Manchester for web startups and established companies alike. Academically speaking, I have gained a BEng(Hons) in Computer Systems Engineering, and also an MSc in Broadband and Mobile Communications Networks.</p>
+      <p>Things that make me tick include <strong>building, deploying and maintaining scalable, efficient web applications</strong>, tinkering with operating systems and learning a medley of programming languages, especially <strong>mobile application development with Android</strong>. I love automation and systems configuration, especially using Ruby-based tools like Puppet and Chef.</p>
+      <p>I've made some useful tools to solve code issues too. I am the author and maintainer (see my Github profile) of the <strong>httpd_redirect_test</strong> gem, which provides shoulda style macros, allowing you to test apache mod_rewrite rules from test/unit and the <strong>twitter_notifier</strong>, a twitter plugin for cruisecontrol.rb to keep you notified of the latest build breaks and fixes.</p>
+      <p>In the future I'll continue to expand my knowledge, keep up to date, work with great people and solve interesting problems!</p>
+      <p class="spaceafter">I'm also pretty handy in Vim!</p>
+
+    <h2>Skills</h2>
+      <ul class="skill-summary spaceafter">
+        <li><h3>Languages:</h3> Ruby, Javascript, HTML, CSS, Java</li>
+        <li><h3>Frameworks:</h3> Rails, Sinatra, jQuery, test/unit, shoulda, cucumber, Rspec, Android</li>
+        <li><h3>Administration:</h3> Linux (RHEL, Debian, ArchLinux), Mac OSX, Apache, Passenger, Mongrel, nginx, Unicorn, Monit, Nagios, Bash, Virtualisation</li>
+        <li><h3>Noteable Tools:</h3> Vim, TextMate, sed, awk, bundler, git, subversion, Rails Engines, Rubygems, cruisecontrol.rb, Eclipse, Ant, ADK, Building APIs, redis, resque</li>
+      </ul>
+      <h2>Experience</h2>
+        <h3>Ruby on Rails Developer, OntheBeach.co.uk, January 2011 - present</h3>
+        <p>I currently work as a developer for one of the largest Ruby on Rails teams in the country helping to develop our large and intertwined collections of applications and services. We develop primarily using Ruby on Rails and the associated languages of the web - HTML, CSS and Javascript. There are also projects existing in Perl and C as well as iPhone and Android apps in various stages from development to published on the App Store</p>
+        <p>Much of the architecture at OnTheBeach revolves around many small applications passing messages around in a service oriented architecture, as a result of this one of the main technical skills that I've had to learn has been how to effectively build API's, as relatively few of our applications need a user facing front-end.</p>
+        <p>We work using agile processes, We are broken down into several smaller teams, with some using Scrum and some using a Kanban based approach. Team rotation happens often so I have gained experience in working with both methodologies.</p>
+        <p>On several occasions I have been required to assume a team leader position to cover for extended holidays and absenses. This taught me a great deal about time management, managing co-workers and how to motivate people around me so we can produce our best work, delivering over and above what was required by some very tight deadlines.</p>
+        <h3>Developer, Reevoo.com, February 2010 - January 2011</h3>
+        <p>In order to broaden and strengthen my knowledge of web development and embrace my love of programming I became a developer at Reevoo in February 2010 (moving from my previous role as a Systems Administrator). As a developer I have gained significant experience of working on large, high traffic Rails applications. One example is our ReevooMark product which is currently embedded in the sites of high profile retailers and manufacturers, such as Sony UK, Tesco, Ann Summers and Best Buy UK.</p>
+
+        <p>I work in a small team using an agile process to develop and maintain a set of distributed Rails apps. Our core offering includes the following: apps that manage data collection (bulk email campaigns and questionnaire response management), services that manage review data aggregation and filtering and front end applications to display the processed review data on Reevoo.com and our customers' sites. I have written libraries and services to display the collected review data in many different ways; from progressively enhanced in-page widgets that open a lightbox, to embedded solutions written in PHP, Java and C#. </p>
+        <p>Several ancillary services exist to facilitate communication between apps and to process the large amount of data collected from both clients and purchasers. I have written and maintain ruby daemons for large, regular, infrequent background data processing tasks as well as continuously running monitoring tasks and queue management libraries and pollers.</p>
+        <p>My skills as a systems administrator help me significantly as a developer by giving me an appreciation of the entire application stack from the operating system and web server level all the way to the design and client-side code.</p>
+        <p>I have practical experience of handling large quantities of data through the entire development and deployment cycle, as well as experience of scalable Rails development, front end development, agile processes (including local and remote pair programming), and working closely as part of a team to maintain and add features to a complex distributed set of applications.</p>
+
+        <h3>Developer & Systems Administrator, Reevoo.com, August 2008 - February 2010</h3>
+        <p>I began working at Reevoo as one of two systems administration focused DevOps. We were responsible for maintaining Reevoo’s server environmen. This consisted of a cluster of servers in a remote data centre running an array of services including Apache, Mongrel, Beanstalk and a complex MySQL replication tree. My colleague and I ran virtualised replicas of this environment in the office to provide QA boxes for the development of Reevoo.com, ReevooMark and their ancillary applications. We also ran several other VM’s providing file stores, backup services and replicated databases for staff. All of these systems were managed by the Ruby-based configuration managemnet framework, Puppet. When I joined Reevoo one of my first tasks was to move data centres which we achieved with no downtime. Later I influenced the decision to switch from Puppet to Chef for our systems management and I shared the writing and construction of the Chef recipes with my colleague.</p>
+        <p>As part of maintaining the applications my colleague and I were normally the first to discover production issues. Due to this we often programmed in pairs with developers in order to write application code. This required a good understanding of how to program in Ruby, how to build Rails applications, the architecture design decisions required when building commercial Rails apps and an ability to work very closely as part of an agile team.</p>
+        <p>As part of Reevoo's agile process I introduced the concept of continuous deployment, championing it's use and writing scripts, helpers and tools to allow it to become a fluid part of our development cycle. This meant we could deploy our applications on each completed card and successful test run. This allows us to concentrate on the most important thing that matters; knowing that any changes we make can normally be seen live within one day.</p>
+
+        <h3>Researcher, University of Kent, September 2007-August 2008</h3>
+        <p>I spent a year as part of a research group in the Computer Science department working on an industry-sponsored project investigating pattern-matching with respect to network intrusion detection. This involved designing a pattern-matching machine in hardware using FPGAs and the software allowing the matcher to be programmed and controlled.</p>
+        <p>During this position I gained experience in Java, hardware design, FPGAs and other programmable architectures, VHDL, finite automata, regular expression and string pattern-matching engines and algorithms.</p>
         <h3>Developer, Aurora Kendrick James Ltd, September 2006 - September 2007</h3>
-        <p class="spaceafter">I was part of a small development team developing the next version of AKJ's popular CRM system for use by the telecoms industry, and in the process migrating the codebase from Delphi to C# using the .NET 2.0 framework. This position gave me experience in developing as part of a team to develop high quality software to a deadline and to client specs. </p>
+        <p class="spaceafter">I was part of a small development team creating the next version of AKJ's popular CRM system for use by the telecoms industry. In the process we migrated the codebase from Delphi to C# using the .NET 2.0 framework. This position gave me experience of working as part of a team to build high quality software to a deadline and to client specs. </p>
       <h2>Education</h2>
         <h3>MSc Broadband and Mobile Communication Networks, University of Kent, September 2005 - September 2006</h3>
-        <p>This was a one year taught Masters degree focussing around Networking and it's various implementation. I learned about TCP/IP and packet based networking. Ethernet, The Telecoms network, Optical communication. Digital Video Transmission and satellite communications</p>
-        <p>It also involved a 6 month research project. Mine was a CAN bus demonstration board, carried out for a company in Portsmouth. This involved designing and manufacturing the circuit boards required for the project as well as writing the CAN bus interface software and a demonstration application for the board to run. This demonstration board was used as a demonstration board by the company to sell their CAN bus solution to clients.</p>
+        <p>My Masters degree focused on networking and its various implementations. I learned about TCP/IP and packet-based networking, Ethernet, the telecoms network, optical communication, digital video transmission and satellite communications.</p>
+        <p>The degree also involved a 6 month research project. I researched and built a CAN bus demonstration board, sponsored by an electronics company in Portsmouth. This involved designing and manufacturing the circuit boards required, writing the CAN bus interface software in C and writing a demonstration application for the board to run. This demonstration board was used by the company to sell their CAN bus solution to clients.</p>
         <h3>BEng(Hons) Computer Systems Engineering (2:1), University of Kent, Sept 2001 - July 2005</h3>
-        <p>This course involved a balanced mix of electronics and computer science, I learned different programming languages and paradigms such as OO programming with Java and functional parallel programming with Occam-Pi. I also learnt about micro-controllers, various computer architectures and how they are built. I also learned soldering skills, hardware design, analogue and digital electronics, and micro-controller programming in C</p>
-        <p>My final year project involved designing and building an expansion card for a PC that provided a complete processor prototyping platform. It interfaced using the PCI bus and was based around an FPGA, had inbuilt SDRAM and multiple methods for programming the FPGA. It also contained JTAG headers and a separate power supply so it could be used with or without a PC. My project won second place for "Best Undergraduate electronics project in Kent" when I graduated</p>
+        <p>During my undergraduate degree I studied a balanced mix of electronics and computer science. I learned different programming languages and paradigms such as OO programming with Java and functional parallel programming with Occam-Pi. I also learnt about micro-controllers, various computer architectures and how they are built. In addition I learned soldering skills, hardware design, analogue and digital electronics, and micro-controller programming in C.</p>
+        <p>For my final year project I designed and built a PCI expansion card that provided a complete processor prototyping platform. It interfaced using the PCI bus and was based around an FPGA, had inbuilt SDRAM and multiple interfaces for programming the FPGA. It also contained JTAG headers and a separate power supply so that it could be used with or without a PC. I was awarded second place for the Final Year Project Prize by the Institute of Electrical Engineers Kent Centre.</p>
         <h3>A-Levels, Barton Court Grammar School, Canterbury</h3>
-        <p class="spaceafter">I achieved A-Levels in Biology, Chemistry and Geography, and also have 9 GCSE's at grade C or above, including Maths(B), and English(B)</p>
+        <p class="spaceafter">I achieved A-Levels in Biology, Chemistry and Geography, and also have 9 GCSEs at grade C or above, including Information Systems(A*), Maths(B), Combined Science(BB) and English(B).</p>
     <h2>Personal Interests</h2>
-    <p>For fun I pick apart Linux, and enjoy testing different distributions. My current distro of choice is ArchLinux, although I'll always have a soft spot for Slackware. I enjoy programming and learning languages (I love Ruby and currently I'm starting to learn some functional programming). Some of my open source code can be seen on <a href="http://github.com/shadowaspect">my GitHub account</a>.</p>
-    <p>I am a keen musician and play both Bass and Guitar, I am currently involved in a collaborative music project writing music over the internet using Git and Audacity. I have previously been involved in several bands, playing gigs and writing music. I listen to a lot of music and try to attend as many gigs as I can.</p>
-    <p>I enjoy collecting video games (mostly retro), reading, and learning about new cool things</p>
+    <p>For fun I pick apart Linux and enjoy testing different distributions. My current distro of choice is ArchLinux, although I'll always have a soft spot for Slackware. I enjoy programming and learning languages; I love Ruby and currently I'm starting to teach myself functional programming using Erlang and Clojure. </p>
+    <p>I'm completely into music and am always on the look out for new bands to listen to and see.  Having been in several bands I play both bass and guitar and currently I am involved in a collaborative internet music project using Git and Audacity.</p>
+    <p>In the gaps around work and music I enjoy collecting and playing video games (and some board games), reading, watching films, and learning about new technologies.</p>
 
-    <h1 class="footer">References can be supplied on request</h1>
+    <span class="footer">References can be supplied on request</span>
   </body>
 </html>
