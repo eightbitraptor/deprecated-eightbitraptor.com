@@ -1,5 +1,5 @@
 ::title::         SSH tab-completion in Bash
-::published::     2011-11-03
+::published::     07-11-2011
 ::tags::          bash,programming,sysadmin
 
 Dealing with ZSH fanbois appears to be an occupational hazard in my office. Their latest pitchfork to rattle was how zsh autocompletes hostnames that are configured in the `.ssh/config` file and tired as I was of their mocking whenever I had to rely on my bash history for a hostname, I decided to do something about it.
