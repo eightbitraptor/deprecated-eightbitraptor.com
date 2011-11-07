@@ -88,3 +88,10 @@ h2 {
   float: left;
   margin: 20px 10px 0px 0px;
 }
+
+blockquote {
+  margin: 0;
+  background-color: #ECF2F5;
+  border: 1px solid #BCD;
+  padding: 0.65em;
+}
