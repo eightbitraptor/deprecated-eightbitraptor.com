@@ -1,5 +1,5 @@
 ::title::     We are tired of writing crap!
-::published:: 27-10-2011
+::published:: 2011-10-27
 ::tags::      programming
 
 To begin, a quote:
