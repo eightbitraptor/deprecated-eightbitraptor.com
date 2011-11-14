@@ -1,3 +1,4 @@
+require 'uri'
 require 'date'
 require 'rdiscount'
 
@@ -18,6 +19,10 @@ class EightBitRaptor < Sinatra::Base
 
     def post_url(post)
       "http://eightbitraptor.com/posts/#{post.printable_pathname}"
+    end
+
+    def comment_link_for(post_title)
+      "mailto:matt@eightbitraptor.com?subject=" + URI::escape("A Comment about #{post_title}")
     end
 
   end
