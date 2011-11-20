@@ -4,7 +4,13 @@
     <%= partial :head %>
   </head>
   <body>
-    <h1 id="site-heading">eightbitraptor.com <span>Rawr.</span></h1>
+    <div id="header">
+      <h1 id="site-heading">eightbitraptor.com <span>Rawr.</span></h1>
+      <ul id="navigation">
+        <li><a href="/feed.xml">RSS</a></li>
+        <li><a href="/posts">All Posts</a></li>
+      </ul>
+    </div>
     <div class="container">
       <div class="column main">
         <%= yield %>

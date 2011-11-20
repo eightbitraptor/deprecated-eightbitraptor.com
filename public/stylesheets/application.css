@@ -31,13 +31,16 @@ h2 {
   padding: 10px 0;
 }
 
-#site-heading {
+#header {
   font-family: 'Quicksand', Helvetica, sans-serif;
-  font-size: 2.5em;
   color: #fff;
   width: 940px;
-  margin: auto;
-  padding: 40px 10px 28px;
+  margin: 17px auto 5px auto;
+}
+#site-heading {
+  display: inline-block;
+  width: 710px;
+  font-size: 2.5em;
   text-shadow: 1px 1px 8px rgba(255,255,255,1);
 }
 #site-heading span {
@@ -47,7 +50,29 @@ h2 {
   color: #999;
   text-shadow: 1px 1px 15px rgba(255,255,255,0.3);
 }
-
+#navigation {
+  font-family: georgia;
+  display: inline-block;
+  width: 165px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 6px;
+}
+#navigation li {
+  display: inline-block;
+  width: 60px;
+  margin: 0 18px 0 0;
+  padding: 0;
+}
+#navigation a{
+  color: #666;
+  font-style: italic;
+}
+#navigation a:hover {
+  text-shadow: 1px 1px 8px rgba(255,255,255,1);
+  color: white;
+  -webkit-transition: all 0.2s linear;
+}
 .container {
     width: 960px;
     margin: 0 auto;
@@ -94,4 +119,10 @@ blockquote {
   background-color: #ECF2F5;
   border: 1px solid #BCD;
   padding: 0.65em;
+}
+
+pre {
+  background-color: black;
+  color: #ddd;
+
 }
